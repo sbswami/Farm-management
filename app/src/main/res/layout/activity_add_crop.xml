@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    tools:context=".crops.AddCrop">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/add_crop_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="@string/add_crop"
+                android:textAlignment="center"
+                android:textColor="@color/title_color"
+                android:textSize="@dimen/title_text" />
+
+            <EditText
+                android:id="@+id/add_crop_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+            <EditText
+                android:id="@+id/add_crop_year_of_sowing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/year_of_sowing"
+                android:inputType="number"
+                android:textSize="@dimen/normal_text" />
+
+            <EditText
+                android:id="@+id/add_crop_year_of_reaping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/year_of_reaping"
+                android:inputType="number"
+                android:textSize="@dimen/normal_text" />
+
+            <EditText
+                android:id="@+id/add_crop_land_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/area_of_land"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/normal_text" />
+
+            <AutoCompleteTextView
+                android:id="@+id/add_crop_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/crop_type"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+
+            <CheckBox
+                android:id="@+id/add_crop_partner_exits_chooser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:text="@string/in_partnership"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <LinearLayout
+                android:id="@+id/add_crop_exist_contatner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/partner_count"
+                    android:spinnerMode="dialog"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:textSize="@dimen/normal_text"/>
+
+                <LinearLayout
+                    android:id="@+id/partner_1_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/even_color"
+                    android:orientation="vertical">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/add_crop_partner_name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/name_of_partner_1"
+                        android:inputType="textPersonName"
+                        android:textSize="@dimen/normal_text" />
+
+                    <EditText
+                        android:id="@+id/add_crop_partner_percentage1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/sharing_percentage_of_partner_1"
+                        android:inputType="numberDecimal"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/partner_2_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/odd_color"
+                    android:orientation="vertical">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/add_crop_partner_name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/name_of_partner_2"
+                        android:inputType="textPersonName"
+                        android:textSize="@dimen/normal_text" />
+
+                    <EditText
+                        android:id="@+id/add_crop_partner_percentage2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/sharing_percentage_of_partner_2"
+                        android:inputType="numberDecimal"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/partner_3_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/even_color"
+                    android:orientation="vertical">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/add_crop_partner_name3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/name_of_partner_3"
+                        android:inputType="textPersonName"
+                        android:textSize="@dimen/normal_text" />
+
+                    <EditText
+                        android:id="@+id/add_crop_partner_percentage3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/sharing_percentage_of_partner_3"
+                        android:inputType="numberDecimal"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/partner_4_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/odd_color"
+                    android:orientation="vertical">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/add_crop_partner_name4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/name_of_partner_4"
+                        android:inputType="textPersonName"
+                        android:textSize="@dimen/normal_text" />
+
+                    <EditText
+                        android:id="@+id/add_crop_partner_percentage4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/sharing_percentage_partner_4"
+                        android:inputType="numberDecimal"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/partner_5_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/even_color"
+                    android:orientation="vertical">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/add_crop_partner_name5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/name_of_partner_5"
+                        android:inputType="textPersonName"
+                        android:textSize="@dimen/normal_text" />
+
+                    <EditText
+                        android:id="@+id/add_crop_partner_percentage5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:ems="10"
+                        android:fontFamily="@font/acme"
+                        android:hint="@string/sharing_percentage_of_partner_5"
+                        android:inputType="numberDecimal"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/add_crop_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="AddCropBt"
+                android:text="@string/add_crop"
+                android:textSize="@dimen/normal_text" />
+
+            <Button
+                android:id="@+id/add_crop_cancel_button"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="AddCropCancelBt"
+                android:text="@string/cancel"
+                android:textSize="@dimen/normal_text" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".crops.SowingCrop">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sowing_crop_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="@string/sowing_crop"
+                android:textAlignment="center"
+                android:textColor="@color/title_color"
+                android:textSize="@dimen/title_text" />
+
+            <AutoCompleteTextView
+                android:id="@+id/sowing_crop_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/remark"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+
+            <EditText
+                android:id="@+id/sowing_crop_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/amount"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/normal_text" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/sowing_choose_date"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/choose_date"
+                    android:onClick="dateChooserSowing"
+                    android:textSize="@dimen/normal_text" />
+
+                <TextView
+                    android:id="@+id/sowing_show_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/no_date_selected"
+                    android:textColor="@color/simple_text_view_color"
+                    android:textSize="@dimen/normal_text"/>
+            </LinearLayout>
+
+            <AutoCompleteTextView
+                android:id="@+id/sowing_service_provider_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/service_provider_name"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+            <RadioGroup
+                android:id="@+id/sowing_mode_of_payment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/similar_margin">
+
+                <RadioButton
+                    android:id="@+id/sowing_cash_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/cash"
+                    android:textSize="@dimen/normal_text" />
+
+                <RadioButton
+                    android:id="@+id/sowing_borrow_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/borrow"
+                    android:textSize="@dimen/normal_text" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/sowing_land_area_of_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/area_of_land_optional"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/normal_text" />
+
+            <CheckBox
+                android:id="@+id/sowing_paid_by_partner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:text="@string/paid_by_partner"
+                android:textSize="@dimen/normal_text" />
+
+            <LinearLayout
+                android:id="@+id/sowing_paid_partner_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <AutoCompleteTextView
+                    android:id="@+id/sowing_partner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:hint="@string/partner_name"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/normal_text" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/sowing_save_bt"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="saveSowingCrop"
+                android:text="@string/save"
+                android:textSize="@dimen/normal_text" />
+
+            <Button
+                android:id="@+id/sowing_cancel_bt"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="cancelSowingCrop"
+                android:text="@string/cancel"
+                android:textSize="@dimen/normal_text" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".crops.OptionForSingleCrop">
+
+    <TextView
+        android:id="@+id/single_crop_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/acme"
+        android:text="@string/single_crop_title"
+        android:textAlignment="center"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/title_text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/sowing_crop_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="SowingCropBt">
+
+                    <ImageView
+                        android:id="@+id/single_sowing_crop_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/noun_sowing_1046357_black"
+                        android:contentDescription="@string/sowing_crop" />
+
+                    <TextView
+                        android:id="@+id/sowing_crop_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/sowing_crop"
+                        android:textAlignment="center"
+                        android:textColor="@color/simple_text_view_color"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/on_a_standing_crop_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="OnStandingACropBt">
+
+                    <ImageView
+                        android:id="@+id/single_on_a_standing_crop_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/noun_crops_984564_black"
+                        android:contentDescription="@string/on_a_standing_crop" />
+
+                    <TextView
+                        android:id="@+id/on_a_standing_crop_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/on_a_standing_crop"
+                        android:textAlignment="center"
+                        android:textColor="@color/simple_text_view_color"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/single_reaping_crop_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="ReapingCropBt">
+
+                    <ImageView
+                        android:id="@+id/single_reaping_crop_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/noun_reaping_black"
+                        android:contentDescription="@string/reaping_crop" />
+
+                    <TextView
+                        android:id="@+id/reaping_crop_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/reaping_crop"
+                        android:textAlignment="center"
+                        android:textColor="@color/simple_text_view_color"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/single_income_crop_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="IncomeCropBt">
+
+                    <ImageView
+                        android:id="@+id/single_income_crop_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/ic_launcher_background"
+                        android:contentDescription="@string/crop_income" />
+
+                    <TextView
+                        android:id="@+id/income_crop_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/crop_income"
+                        android:textAlignment="center"
+                        android:textColor="@color/simple_text_view_color"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/single_crop_report_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="ReportCropBt">
+
+                    <ImageView
+                        android:id="@+id/single_crop_report_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/noun_report_black"
+                        android:contentDescription="@string/report" />
+
+                    <TextView
+                        android:id="@+id/report_crop_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/report"
+                        android:textAlignment="center"
+                        android:textColor="@color/simple_text_view_color"
+                        android:textSize="@dimen/normal_text"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

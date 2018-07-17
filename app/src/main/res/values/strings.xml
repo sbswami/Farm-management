@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Farm Management</string>
+
+    <array name="partner_count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </array>
+
+    <string name="loan">Loan</string>
+    <string name="extra">Extra</string>
+    <string name="crop">Crop</string>
+    <string name="my_crops">My Crops</string>
+    <string name="ok">OK</string>
+    <string name="add_partner">Add Partner</string>
+    <string name="cancel">Cancel</string>
+    <string name="address">Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="add_service_provider">Add Service Provider</string>
+    <string name="service_type_optional">Service Type (Optional)</string>
+    <string name="add_crop">Add Crop</string>
+    <string name="year_of_sowing">Year of Sowing</string>
+    <string name="year_of_reaping">Year of Reaping</string>
+    <string name="crop_type">Crop Type</string>
+    <string name="partner_name">Partner Name</string>
+    <string name="sharing_percentage">Sharing Percentage</string>
+    <string name="crop_name">Crop Name</string>
+    <string name="single_crop_title">Single Crop Title</string>
+    <string name="sowing">Sowing</string>
+    <string name="on_a_standing_crop">On A Standing Crop</string>
+    <string name="reaping_crop">Reaping Crop</string>
+    <string name="report">Report</string>
+    <string name="sowing_crop">Sowing Crop</string>
+    <string name="crop_income">Crop Income</string>
+    <string name="area_of_land">Area of Land</string>
+    <string name="name_of_partner_1">Name of Partner 1</string>
+    <string name="sharing_percentage_of_partner_1">Sharing Percentage of Partner 1</string>
+    <string name="name_of_partner_2">Name of Partner 2</string>
+    <string name="sharing_percentage_of_partner_2">Sharing Percentage of Partner 2</string>
+    <string name="name_of_partner_3">Name of Partner 3</string>
+    <string name="sharing_percentage_of_partner_3">Sharing Percentage of Partner 3</string>
+    <string name="name_of_partner_4">Name of Partner 4</string>
+    <string name="sharing_percentage_partner_4">Sharing Percentage Partner 4</string>
+    <string name="name_of_partner_5">Name of Partner 5</string>
+    <string name="sharing_percentage_of_partner_5">Sharing Percentage of Partner 5</string>
+    <string name="please_choose_any_date">Please Choose Any Date</string>
+    <string name="error">Error!!</string>
+    <string name="something_is_wrong">Something is Wrong!!</string>
+    <string name="try_again_later_or_send_feedback">Try Again Later or Send Feedback!!</string>
+    <string name="remark">Remark</string>
+    <string name="amount">Amount</string>
+    <string name="area_of_land_optional">Area of Land(Optional)</string>
+    <string name="service_provider_name">Service Provider Name</string>
+    <string name="cash">Cash</string>
+    <string name="borrow">Borrow</string>
+    <string name="paid_by_partner">Paid By Partner</string>
+    <string name="choose_date">Choose Date</string>
+    <string name="no_date_selected">No Date Selected</string>
+    <string name="save">Save</string>
+    <string name="service_provider">Service Provider</string>
+    <string name="partner">Partner</string>
+    <string name="buyer">Buyer</string>
+    <string name="add_buyer">Add Buyer</string>
+    <string name="in_partnership">In Partnership</string>
+    <string name="income_of_crop">Income of Crop</string>
+    <string name="rate_per_weight">Rate Per Weight</string>
+    <string name="weight">Weight</string>
+    <string name="buyer_name">Buyer Name</string>
+    <string name="sharing_amount_partner_1">Sharing Amount With Partner 1</string>
+    <string name="sharing_amount_with">Sharing Amount With</string>
+    <string name="sharing_percentage_with">Sharing Percentage With</string>
+    <string name="my_income">My Income</string>
+    <string name="filter">Filter</string>
+</resources>

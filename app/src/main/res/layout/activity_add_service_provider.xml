@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    tools:context=".crops.AddServiceProvider">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/add_service_provider_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="@string/add_service_provider"
+                android:textAlignment="center"
+                android:textColor="@color/title_color"
+                android:textSize="@dimen/title_text" />
+
+            <EditText
+                android:id="@+id/add_service_provider_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+            <EditText
+                android:id="@+id/add_service_provider_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:hint="@string/phone_number"
+                android:fontFamily="@font/acme"
+                android:inputType="phone"
+                android:textSize="@dimen/normal_text" />
+
+            <EditText
+                android:id="@+id/add_service_provider_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:hint="@string/address"
+                android:fontFamily="@font/acme"
+                android:inputType="textPostalAddress"
+                android:textSize="@dimen/normal_text" />
+
+            <AutoCompleteTextView
+                android:id="@+id/add_service_provider_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:hint="@string/service_type_optional"
+                android:fontFamily="@font/acme"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+            <Button
+                android:id="@+id/add_service_provider_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="AddServiceProviderBt"
+                android:text="@string/add_service_provider"
+                android:textSize="@dimen/normal_text" />
+
+            <Button
+                android:id="@+id/add_service_provider_cancel_button"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="AddServiceProviderCancleBt"
+                android:text="@string/cancel"
+                android:textSize="@dimen/normal_text" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

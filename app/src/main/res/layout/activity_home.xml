@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/crop_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5sp"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/my_crops"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:onClick="myCropsBt"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/my_crops_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                app:srcCompat="@drawable/noun_farm_1180461_black"
+                                android:contentDescription="@string/my_crops" />
+
+                            <TextView
+                                android:id="@+id/my_crops_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/my_crops"
+                                android:textAlignment="center"
+                                android:textColor="@color/simple_text_view_color"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/service_provider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:onClick="serviceProviderBt"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/service_provider_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                app:srcCompat="@drawable/noun_business_service_749127_black"
+                                android:contentDescription="@string/service_provider" />
+
+                            <TextView
+                                android:id="@+id/service_provider_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/service_provider"
+                                android:textAlignment="center"
+                                android:textColor="@color/simple_text_view_color"
+                                android:textSize="@dimen/normal_text"  />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/partner_crop"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:onClick="partnerCropsBt"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/partner_crop_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                app:srcCompat="@drawable/noun_partners_729415_black" />
+
+                            <TextView
+                                android:id="@+id/partner_crop_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/partner"
+                                android:textAlignment="center"
+                                android:textColor="@color/simple_text_view_color"
+                                android:textSize="@dimen/normal_text"  />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buyer_crops"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:onClick="buyerCropBt"
+                            android:padding="5sp">
+                            <ImageView
+                                android:id="@+id/buyer_crops_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                app:srcCompat="@drawable/ic_launcher_background" />
+
+                            <TextView
+                                android:id="@+id/buyer_crops_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/buyer"
+                                android:textAlignment="center"
+                                android:textColor="@color/simple_text_view_color"
+                                android:textSize="@dimen/normal_text"  />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:id="@+id/all_crops_report"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:onClick="allCropsReportBt"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/all_crops_report_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                app:srcCompat="@drawable/noun_data_1337439_black" />
+
+                            <TextView
+                                android:id="@+id/all_report_crop_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/report"
+                                android:textAlignment="center"
+                                android:textColor="@color/simple_text_view_color"
+                                android:textSize="@dimen/normal_text"  />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loan_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/extra_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".crops.PartnerCrop">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_partner"
+        android:layout_width="55sp"
+        android:layout_height="55sp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="addPartnerBt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_white_24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <AutoCompleteTextView
+            android:id="@+id/partner_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AutoCompleteTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ListView
+            android:id="@+id/partner_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partner_search" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

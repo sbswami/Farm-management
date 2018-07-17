@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sanshy.farmmanagement">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Home"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".crops.MyCrops" />
+        <activity android:name=".crops.SingleCrop" />
+        <activity android:name=".crops.ServiceProviders" />
+        <activity android:name=".crops.SowingCrop" />
+        <activity android:name=".crops.OnAStandingCrop" />
+        <activity android:name=".crops.ReapingCrop" />
+        <activity android:name=".crops.PartnerCrop" />
+        <activity android:name=".crops.IncomeCrop" />
+        <activity android:name=".crops.ReportSingleCrop" />
+        <activity android:name=".extras.HomeExpenditure" />
+        <activity android:name=".extras.SideBusiness" />
+        <activity android:name=".extras.OtherExpenditure" />
+        <activity android:name=".crops.OptionForSingleCrop" />
+        <activity android:name=".extras.sidebusiness.SideExpenditure" />
+        <activity android:name=".extras.sidebusiness.SideIncome" />
+        <activity android:name=".extras.sidebusiness.SideReport" />
+        <activity android:name=".extras.sidebusiness.SideExpenditureHistory" />
+        <activity android:name=".extras.sidebusiness.SideIncomeHistory" />
+        <activity android:name=".crops.IncomeCropHistory" />
+        <activity android:name=".crops.AddServiceProvider" />
+        <activity android:name=".crops.ServiceProviderSingle" />
+        <activity android:name=".crops.AddPartnerCrop" />
+        <activity android:name=".crops.PartnerCropSingle" />
+        <activity android:name=".crops.AllCropsReport" />
+        <activity android:name=".crops.AddCrop" />
+        <activity android:name=".crops.SowingCropHistory" />
+        <activity android:name=".crops.OnAStandingCropHistory" />
+        <activity android:name=".crops.ReapingCropHistory" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".crops.BuyerCrops" />
+        <activity android:name=".crops.BuyerCropsSingle" />
+        <activity android:name=".crops.AddBuyerCrops"></activity>
+    </application>
+
+</manifest>
