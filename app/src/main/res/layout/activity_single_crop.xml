@@ -7,4 +7,166 @@
     android:layout_height="match_parent"
     tools:context=".crops.SingleCrop">
 
+    <Button
+        android:id="@+id/delete_crop"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:fontFamily="@font/acme"
+        android:onClick="deleteCropBt"
+        android:text="@string/delete"
+        android:textSize="@dimen/normal_text" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center_horizontal"
+        android:padding="@dimen/small_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/remark"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/crop_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/amount"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/year_of_sowing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/date"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/year_of_reaping"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/service_provider"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/area_of_land"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/payment_mode"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/crop_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/partners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:fontFamily="@font/acme"
+            android:text="@string/no_date_selected"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/normal_text" />
+
+    </TableLayout>
 </LinearLayout>

@@ -29,6 +29,7 @@
                 android:textSize="@dimen/title_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_crop_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_crop_year_of_sowing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,6 +53,7 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_crop_year_of_reaping"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,6 +65,7 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_crop_land_area"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,25 +103,27 @@
                 android:id="@+id/add_crop_exist_contatner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
-                <Spinner
-                    android:id="@+id/spinner"
+                <Button
+                    android:id="@+id/add_crop_choose_partner_count"
+                    style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/partner_count"
-                    android:spinnerMode="dialog"
                     android:layout_margin="@dimen/similar_margin"
-                    android:ems="10"
                     android:fontFamily="@font/acme"
-                    android:textSize="@dimen/normal_text"/>
+                    android:onClick="NumberOfPartnerChooseBt"
+                    android:text="@string/number_of_partners"
+                    android:textSize="@dimen/normal_text" />
 
                 <LinearLayout
                     android:id="@+id/partner_1_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/even_color"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                android:visibility="gone">
 
                     <AutoCompleteTextView
                         android:id="@+id/add_crop_partner_name1"
@@ -131,6 +137,7 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
+                android:textColor="@color/edit_text"
                         android:id="@+id/add_crop_partner_percentage1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,14 +148,13 @@
                         android:inputType="numberDecimal"
                         android:textSize="@dimen/normal_text" />
                 </LinearLayout>
-
-
                 <LinearLayout
                     android:id="@+id/partner_2_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/odd_color"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                android:visibility="gone">
 
                     <AutoCompleteTextView
                         android:id="@+id/add_crop_partner_name2"
@@ -162,6 +168,7 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
+                android:textColor="@color/edit_text"
                         android:id="@+id/add_crop_partner_percentage2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -177,7 +184,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/even_color"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                android:visibility="gone">
 
                     <AutoCompleteTextView
                         android:id="@+id/add_crop_partner_name3"
@@ -191,6 +199,7 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
+                android:textColor="@color/edit_text"
                         android:id="@+id/add_crop_partner_percentage3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -206,7 +215,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/odd_color"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                android:visibility="gone">
 
                     <AutoCompleteTextView
                         android:id="@+id/add_crop_partner_name4"
@@ -220,6 +230,7 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
+                android:textColor="@color/edit_text"
                         android:id="@+id/add_crop_partner_percentage4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -235,7 +246,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/even_color"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                android:visibility="gone">
 
                     <AutoCompleteTextView
                         android:id="@+id/add_crop_partner_name5"
@@ -249,6 +261,7 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
+                android:textColor="@color/edit_text"
                         android:id="@+id/add_crop_partner_percentage5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

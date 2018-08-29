@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class SingleServiceProviderData {
 
+    String ServiceProviderId;
     String ServiceProviderName;
     long ServiceProviderPhone;
     String ServiceProviderAddress;
-    String ServiceProviderId;
     String ServiceProviderServiceType;
     double ServiceProviderRemainingPayment;
     Date ServiceProviderAddingDate;
 
-    public SingleServiceProviderData(String serviceProviderName, long serviceProviderPhone, String serviceProviderAddress, String serviceProviderId, String serviceProviderServiceType, double serviceProviderRemainingPayment, Date serviceProviderAddingDate) {
+    public SingleServiceProviderData(String serviceProviderId, String serviceProviderName, long serviceProviderPhone, String serviceProviderAddress, String serviceProviderServiceType, double serviceProviderRemainingPayment, Date serviceProviderAddingDate) {
+        ServiceProviderId = serviceProviderId;
         ServiceProviderName = serviceProviderName;
         ServiceProviderPhone = serviceProviderPhone;
         ServiceProviderAddress = serviceProviderAddress;
-        ServiceProviderId = serviceProviderId;
         ServiceProviderServiceType = serviceProviderServiceType;
         ServiceProviderRemainingPayment = serviceProviderRemainingPayment;
         ServiceProviderAddingDate = serviceProviderAddingDate;

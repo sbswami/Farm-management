@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".extras.sidebusiness.SideIncomeHistory">
+    android:orientation="vertical"
+    tools:context=".extras.side_business.SideIncomeHistory">
+    <Button
+        android:id="@+id/filter_side_income_history_bt"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="FilterSideIncomeHistory"
+        android:text="@string/filter"
+        android:textAllCaps="false"
+        android:textSize="@dimen/normal_text" />
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/date_column"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:text="@string/date"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/normal_text" />
+        <TextView
+            android:id="@+id/remark_column"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:text="@string/remark"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/normal_text" />
+        <TextView
+            android:id="@+id/amount_column"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:text="@string/amount"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/normal_text" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/side_income_history_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

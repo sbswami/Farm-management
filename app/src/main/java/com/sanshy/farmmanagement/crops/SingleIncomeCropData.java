@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class SingleIncomeCropData {
     String IncomeId;
+    String CropId;
     String IncomeRemark;
     double IncomeAmount;
     double IncomeCropRate;
@@ -44,9 +45,10 @@ public class SingleIncomeCropData {
     String PartnerName5;
     String PartnerId5;
 
-    public SingleIncomeCropData(String incomeId, String incomeRemark, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2, double partnerShareAmount3, double partnerSharedPercentage3, String partnerName3, String partnerId3, double partnerShareAmount4, double partnerSharedPercentage4, String partnerName4, String partnerId4, double partnerShareAmount5, double partnerSharedPercentage5, String partnerName5, String partnerId5) {
+    public SingleIncomeCropData(String incomeId, String incomeRemark, String cropId, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2, double partnerShareAmount3, double partnerSharedPercentage3, String partnerName3, String partnerId3, double partnerShareAmount4, double partnerSharedPercentage4, String partnerName4, String partnerId4, double partnerShareAmount5, double partnerSharedPercentage5, String partnerName5, String partnerId5) {
         IncomeId = incomeId;
         IncomeRemark = incomeRemark;
+        CropId = cropId;
         IncomeAmount = incomeAmount;
         IncomeCropRate = incomeCropRate;
         IncomeCropWeight = incomeCropWeight;
@@ -80,9 +82,10 @@ public class SingleIncomeCropData {
         PartnerId5 = partnerId5;
     }
 
-    public SingleIncomeCropData(String incomeId, String incomeRemark, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2, double partnerShareAmount3, double partnerSharedPercentage3, String partnerName3, String partnerId3, double partnerShareAmount4, double partnerSharedPercentage4, String partnerName4, String partnerId4) {
+    public SingleIncomeCropData(String incomeId, String incomeRemark,String cropId, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2, double partnerShareAmount3, double partnerSharedPercentage3, String partnerName3, String partnerId3, double partnerShareAmount4, double partnerSharedPercentage4, String partnerName4, String partnerId4) {
         IncomeId = incomeId;
         IncomeRemark = incomeRemark;
+        CropId = cropId;
         IncomeAmount = incomeAmount;
         IncomeCropRate = incomeCropRate;
         IncomeCropWeight = incomeCropWeight;
@@ -112,9 +115,10 @@ public class SingleIncomeCropData {
         PartnerId4 = partnerId4;
     }
 
-    public SingleIncomeCropData(String incomeId, String incomeRemark, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2, double partnerShareAmount3, double partnerSharedPercentage3, String partnerName3, String partnerId3) {
+    public SingleIncomeCropData(String incomeId, String incomeRemark,String cropId, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2, double partnerShareAmount3, double partnerSharedPercentage3, String partnerName3, String partnerId3) {
         IncomeId = incomeId;
         IncomeRemark = incomeRemark;
+        CropId = cropId;
         IncomeAmount = incomeAmount;
         IncomeCropRate = incomeCropRate;
         IncomeCropWeight = incomeCropWeight;
@@ -140,9 +144,10 @@ public class SingleIncomeCropData {
         PartnerId3 = partnerId3;
     }
 
-    public SingleIncomeCropData(String incomeId, String incomeRemark, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2) {
+    public SingleIncomeCropData(String incomeId, String incomeRemark,String cropId, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1, double partnerShareAmount2, double partnerSharedPercentage2, String partnerName2, String partnerId2) {
         IncomeId = incomeId;
         IncomeRemark = incomeRemark;
+        CropId = cropId;
         IncomeAmount = incomeAmount;
         IncomeCropRate = incomeCropRate;
         IncomeCropWeight = incomeCropWeight;
@@ -164,9 +169,10 @@ public class SingleIncomeCropData {
         PartnerId2 = partnerId2;
     }
 
-    public SingleIncomeCropData(String incomeId, String incomeRemark, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1) {
+    public SingleIncomeCropData(String incomeId, String incomeRemark,String cropId, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner, double partnerShareAmount1, double partnerSharedPercentage1, String partnerName1, String partnerId1) {
         IncomeId = incomeId;
         IncomeRemark = incomeRemark;
+        CropId = cropId;
         IncomeAmount = incomeAmount;
         IncomeCropRate = incomeCropRate;
         IncomeCropWeight = incomeCropWeight;
@@ -184,9 +190,10 @@ public class SingleIncomeCropData {
         PartnerId1 = partnerId1;
     }
 
-    public SingleIncomeCropData(String incomeId, String incomeRemark, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner) {
+    public SingleIncomeCropData(String incomeId, String incomeRemark, String cropId, double incomeAmount, double incomeCropRate, double incomeCropWeight, double selfShareAmount, Date incomeDate, double incomeLandArea, boolean cashBuyer, String buyerCropsName, String buyerCropsId, long partnerCount, boolean checkPartner) {
         IncomeId = incomeId;
         IncomeRemark = incomeRemark;
+        CropId = cropId;
         IncomeAmount = incomeAmount;
         IncomeCropRate = incomeCropRate;
         IncomeCropWeight = incomeCropWeight;
@@ -198,6 +205,14 @@ public class SingleIncomeCropData {
         BuyerCropsId = buyerCropsId;
         PartnerCount = partnerCount;
         CheckPartner = checkPartner;
+    }
+
+    public String getCropId() {
+        return CropId;
+    }
+
+    public void setCropId(String cropId) {
+        CropId = cropId;
     }
 
     public String getIncomeId() {

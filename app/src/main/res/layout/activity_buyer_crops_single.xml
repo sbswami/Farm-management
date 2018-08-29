@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".crops.BuyerCropsSingle">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/buyer_crop_name_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/buyer_name"
+        android:gravity="center"
+        android:textColor="@color/simple_text_view_color"
+        android:textSize="@dimen/title_text" />
+    <TextView
+        android:id="@+id/buyer_crop_remaining_amount_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/remaining_amount"
+        android:gravity="center"
+        android:textColor="@color/simple_text_view_color"
+        android:textSize="@dimen/normal_text" />
+
+    <EditText
+                android:textColor="@color/edit_text"
+                android:fontFamily="@font/acme"
+        android:id="@+id/buyer_crop_paying_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:ems="10"
+        android:hint="@string/paying_amount"
+        android:inputType="numberDecimal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buyer_crop_date"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:onClick="dateChooserBuyerCropBt"
+            android:text="@string/choose_date"
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:id="@+id/buyer_crop_single_show_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="@string/no_date_selected"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/normal_text" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buyer_crop_pay_single"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/pay"
+        android:onClick="PayNowBt"
+        android:textSize="@dimen/normal_text" />
+
+    <Button
+        android:id="@+id/buyer_crop_history_pay_single"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:fontFamily="@font/acme"
+        android:onClick="HistoryOfPayBt"
+        android:text="@string/history_of_pay"
+        android:textSize="@dimen/normal_text" />
+
+    <Button
+        android:id="@+id/buyer_crop_history_purchases_single"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:fontFamily="@font/acme"
+        android:onClick="HistoryOfPurchaseBt"
+        android:text="@string/history_of_purchase"
+        android:textSize="@dimen/normal_text" />
+
+</LinearLayout>

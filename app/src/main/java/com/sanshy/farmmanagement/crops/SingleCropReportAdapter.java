@@ -42,9 +42,9 @@ public class SingleCropReportAdapter extends ArrayAdapter<SingleCropReportSmallL
         TextView Cash = rowView.findViewById(R.id.single_report_cash);
         TextView Borrow = rowView.findViewById(R.id.single_report_borrow);
 
-        Total.setText(list.getTotal());
-        Cash.setText(list.getCash());
-        Borrow.setText(list.getBorrow());
+        Total.setText(context.getString(R.string.total_amount)+": "+list.getTotal());
+        Cash.setText(context.getString(R.string.cash)+": "+list.getCash());
+        Borrow.setText(context.getString(R.string.borrow)+": "+list.getBorrow());
         Title.setText(list.getTitle());
 
         return rowView;

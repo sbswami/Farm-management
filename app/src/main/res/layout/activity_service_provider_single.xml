@@ -1,9 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".crops.ServiceProviderSingle">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/service_provider_name_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:fontFamily="@font/acme"
+            android:gravity="center"
+            android:text="@string/service_provider_name"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/title_text" />
+
+        <TextView
+            android:id="@+id/service_provider_remaining_amount_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:fontFamily="@font/acme"
+            android:gravity="center"
+            android:text="@string/remaining_amount"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/normal_text" />
+
+        <EditText
+                android:textColor="@color/edit_text"
+                    android:id="@+id/service_provider_paying_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:ems="10"
+            android:fontFamily="@font/acme"
+            android:hint="@string/paying_amount"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/service_provider_date"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:onClick="dateChooserServicePBt"
+                android:text="@string/choose_date"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/service_provider_single_show_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/service_provider_pay_single"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:fontFamily="@font/acme"
+            android:onClick="PayNowSBt"
+            android:text="@string/pay"
+            android:textSize="@dimen/normal_text" />
+
+        <Button
+            android:id="@+id/service_provider_history_pay_single"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:fontFamily="@font/acme"
+            android:onClick="HistoryOfPaySBt"
+            android:text="@string/history_of_pay"
+            android:textSize="@dimen/normal_text" />
+
+    <Button
+        android:id="@+id/service_provider_history_service_single"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/similar_margin"
+        android:fontFamily="@font/acme"
+        android:onClick="HistoryOfServiceBt"
+        android:text="@string/history_of_service"
+        android:textSize="@dimen/normal_text" />
+
+</LinearLayout>

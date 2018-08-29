@@ -40,18 +40,8 @@
 
 
             <EditText
-                android:id="@+id/income_crop_amount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/similar_margin"
-                android:ems="10"
-                android:fontFamily="@font/acme"
-                android:hint="@string/amount"
-                android:inputType="numberDecimal"
-                android:textSize="@dimen/normal_text" />
-
-            <EditText
-                android:id="@+id/income_crop_rate_per_quantity"
+                android:textColor="@color/edit_text"
+                        android:id="@+id/income_crop_rate_per_quantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/similar_margin"
@@ -62,13 +52,26 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
-                android:id="@+id/income_crop_weight"
+                android:textColor="@color/edit_text"
+                        android:id="@+id/income_crop_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/similar_margin"
                 android:ems="10"
                 android:fontFamily="@font/acme"
                 android:hint="@string/weight"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/normal_text" />
+
+            <EditText
+                android:textColor="@color/edit_text"
+                        android:id="@+id/income_crop_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/amount"
                 android:inputType="numberDecimal"
                 android:textSize="@dimen/normal_text" />
 
@@ -106,7 +109,8 @@
                 android:id="@+id/income_crop_mode_of_payment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/similar_margin">
+                android:layout_margin="@dimen/similar_margin"
+                android:checkedButton="@+id/income_crop_cash_mode">
 
                 <RadioButton
                     android:id="@+id/income_crop_cash_mode"
@@ -141,7 +145,8 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
-                android:id="@+id/income_crop_land_area_of_service"
+                android:textColor="@color/edit_text"
+                        android:id="@+id/income_crop_land_area_of_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/similar_margin"
@@ -157,7 +162,8 @@
                 android:id="@+id/income_crop_partner_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/income_crop_my_share"
@@ -175,6 +181,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                android:visibility="gone"
                     android:background="@color/even_color">
 
                     <TextView
@@ -188,7 +195,8 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
-                        android:id="@+id/income_crop_partner_share_percentage_1"
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_percentage_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -197,8 +205,9 @@
                         android:hint="@string/sharing_percentage_with"
                         android:inputType="numberDecimal"
                         android:textSize="@dimen/normal_text" />
-                    <EditText
-                        android:id="@+id/income_crop_partner_share_amount_1"
+                    <TextView
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_amount_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -214,6 +223,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                android:visibility="gone"
                     android:background="@color/odd_color">
 
                     <TextView
@@ -227,7 +237,8 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
-                        android:id="@+id/income_crop_partner_share_percentage_2"
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_percentage_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -236,8 +247,9 @@
                         android:hint="@string/sharing_percentage_with"
                         android:inputType="numberDecimal"
                         android:textSize="@dimen/normal_text" />
-                    <EditText
-                        android:id="@+id/income_crop_partner_share_amount_2"
+                    <TextView
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_amount_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -253,6 +265,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                android:visibility="gone"
                     android:background="@color/even_color">
 
                     <TextView
@@ -266,7 +279,8 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
-                        android:id="@+id/income_crop_partner_share_percentage_3"
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_percentage_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -275,8 +289,9 @@
                         android:hint="@string/sharing_percentage_with"
                         android:inputType="numberDecimal"
                         android:textSize="@dimen/normal_text" />
-                    <EditText
-                        android:id="@+id/income_crop_partner_share_amount_3"
+                    <TextView
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_amount_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -292,6 +307,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                android:visibility="gone"
                     android:background="@color/odd_color">
 
                     <TextView
@@ -305,7 +321,8 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
-                        android:id="@+id/income_crop_partner_share_percentage_4"
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_percentage_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -314,8 +331,9 @@
                         android:hint="@string/sharing_percentage_with"
                         android:inputType="numberDecimal"
                         android:textSize="@dimen/normal_text" />
-                    <EditText
-                        android:id="@+id/income_crop_partner_share_amount_4"
+                    <TextView
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_amount_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -331,6 +349,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                android:visibility="gone"
                     android:background="@color/even_color">
 
                     <TextView
@@ -344,7 +363,8 @@
                         android:textSize="@dimen/normal_text" />
 
                     <EditText
-                        android:id="@+id/income_crop_partner_share_percentage_5"
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_percentage_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"
@@ -353,8 +373,9 @@
                         android:hint="@string/sharing_percentage_with"
                         android:inputType="numberDecimal"
                         android:textSize="@dimen/normal_text" />
-                    <EditText
-                        android:id="@+id/income_crop_partner_share_amount_5"
+                    <TextView
+                android:textColor="@color/edit_text"
+                                android:id="@+id/income_crop_partner_share_amount_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/similar_margin"

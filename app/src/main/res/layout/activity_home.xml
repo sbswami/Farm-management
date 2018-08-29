@@ -11,8 +11,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5sp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -31,7 +33,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -44,17 +46,18 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5sp"
                             android:layout_weight="1"
+                            android:background="@color/icon_bg"
                             android:gravity="center"
-                            android:orientation="vertical"
                             android:onClick="myCropsBt"
+                            android:orientation="vertical"
                             android:padding="5sp">
 
                             <ImageView
                                 android:id="@+id/my_crops_icon"
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
-                                app:srcCompat="@drawable/noun_farm_1180461_black"
-                                android:contentDescription="@string/my_crops" />
+                                android:contentDescription="@string/my_crops"
+                                app:srcCompat="@drawable/my_crop_white" />
 
                             <TextView
                                 android:id="@+id/my_crops_text"
@@ -63,7 +66,7 @@
                                 android:fontFamily="@font/acme"
                                 android:text="@string/my_crops"
                                 android:textAlignment="center"
-                                android:textColor="@color/simple_text_view_color"
+                                android:textColor="@color/text_icon"
                                 android:textSize="@dimen/normal_text" />
                         </LinearLayout>
 
@@ -73,17 +76,18 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5sp"
                             android:layout_weight="1"
+                            android:background="@color/icon_bg"
                             android:gravity="center"
-                            android:orientation="vertical"
                             android:onClick="serviceProviderBt"
+                            android:orientation="vertical"
                             android:padding="5sp">
 
                             <ImageView
                                 android:id="@+id/service_provider_icon"
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
-                                app:srcCompat="@drawable/noun_business_service_749127_black"
-                                android:contentDescription="@string/service_provider" />
+                                android:contentDescription="@string/service_provider"
+                                app:srcCompat="@drawable/service_provider_white" />
 
                             <TextView
                                 android:id="@+id/service_provider_text"
@@ -92,8 +96,8 @@
                                 android:fontFamily="@font/acme"
                                 android:text="@string/service_provider"
                                 android:textAlignment="center"
-                                android:textColor="@color/simple_text_view_color"
-                                android:textSize="@dimen/normal_text"  />
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -108,16 +112,17 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5sp"
                             android:layout_weight="1"
+                            android:background="@color/icon_bg"
                             android:gravity="center"
-                            android:orientation="vertical"
                             android:onClick="partnerCropsBt"
+                            android:orientation="vertical"
                             android:padding="5sp">
 
                             <ImageView
                                 android:id="@+id/partner_crop_icon"
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
-                                app:srcCompat="@drawable/noun_partners_729415_black" />
+                                app:srcCompat="@drawable/partner_white" />
 
                             <TextView
                                 android:id="@+id/partner_crop_text"
@@ -126,8 +131,8 @@
                                 android:fontFamily="@font/acme"
                                 android:text="@string/partner"
                                 android:textAlignment="center"
-                                android:textColor="@color/simple_text_view_color"
-                                android:textSize="@dimen/normal_text"  />
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -136,15 +141,17 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5sp"
                             android:layout_weight="1"
+                            android:background="@color/icon_bg"
                             android:gravity="center"
-                            android:orientation="vertical"
                             android:onClick="buyerCropBt"
+                            android:orientation="vertical"
                             android:padding="5sp">
+
                             <ImageView
                                 android:id="@+id/buyer_crops_icon"
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
-                                app:srcCompat="@drawable/ic_launcher_background" />
+                                app:srcCompat="@drawable/buyer_white" />
 
                             <TextView
                                 android:id="@+id/buyer_crops_text"
@@ -153,8 +160,8 @@
                                 android:fontFamily="@font/acme"
                                 android:text="@string/buyer"
                                 android:textAlignment="center"
-                                android:textColor="@color/simple_text_view_color"
-                                android:textSize="@dimen/normal_text"  />
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -162,22 +169,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
+
                         <LinearLayout
                             android:id="@+id/all_crops_report"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="5sp"
                             android:layout_weight="1"
+                            android:background="@color/icon_bg"
                             android:gravity="center"
-                            android:orientation="vertical"
                             android:onClick="allCropsReportBt"
+                            android:orientation="vertical"
                             android:padding="5sp">
 
                             <ImageView
                                 android:id="@+id/all_crops_report_icon"
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
-                                app:srcCompat="@drawable/noun_data_1337439_black" />
+                                app:srcCompat="@drawable/big_report_white" />
 
                             <TextView
                                 android:id="@+id/all_report_crop_text"
@@ -186,8 +195,8 @@
                                 android:fontFamily="@font/acme"
                                 android:text="@string/report"
                                 android:textAlignment="center"
-                                android:textColor="@color/simple_text_view_color"
-                                android:textSize="@dimen/normal_text"  />
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -198,13 +207,432 @@
             android:id="@+id/loan_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/new_loan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:background="@color/icon_bg"
+                            android:gravity="center"
+                            android:onClick="newLoanBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/new_loan_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/new_loan"
+                                app:srcCompat="@drawable/noun_loan_1807266_white" />
+
+                            <TextView
+                                android:id="@+id/new_loan_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/new_loan"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/loan_person"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:background="@color/icon_bg"
+                            android:gravity="center"
+                            android:onClick="loanPersonBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/loan_person_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/loan_person"
+                                app:srcCompat="@drawable/loan_person_2_white" />
+
+                            <TextView
+                                android:id="@+id/loan_person_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/loan_person"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/get_loan_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:background="@color/icon_bg"
+                            android:gravity="center"
+                            android:onClick="getLoanListBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/get_loan_list_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/get_loan_list"
+                                app:srcCompat="@drawable/get_loan_history_white" />
+
+                            <TextView
+                                android:id="@+id/get_loan_list_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/get_loan_list"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/give_loan_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:background="@color/icon_bg"
+                            android:gravity="center"
+                            android:onClick="giveLoanListBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/give_loan_list_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/give_loan_list"
+                                app:srcCompat="@drawable/give_loan_history_white" />
+
+                            <TextView
+                                android:id="@+id/give_loan_list_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/give_loan_list"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/get_and_paid_loan_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:background="@color/icon_bg"
+                            android:gravity="center"
+                            android:onClick="getAndPaidLoanListBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/get_and_paid_loan_list_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/get_and_paid_loan_list"
+                                app:srcCompat="@drawable/get_loan_paid_white" />
+
+                            <TextView
+                                android:id="@+id/get_and_paid_loan_list_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/get_and_paid_loan_list"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/give_and_paid_loan_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:background="@color/icon_bg"
+                            android:gravity="center"
+                            android:onClick="giveAndPaidLoanListBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/give_and_paid_loan_list_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/give_and_paid_loan_list"
+                                app:srcCompat="@drawable/give_loan_paid_white" />
+
+                            <TextView
+                                android:id="@+id/give_and_paid_loan_list_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/give_and_paid_loan_list"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/report_loan_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:background="@color/icon_bg"
+                            android:gravity="center"
+                            android:onClick="ReportBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/report_loan_list_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/report_loan"
+                                app:srcCompat="@drawable/small_report_white" />
+
+                            <TextView
+                                android:id="@+id/report_loan_list_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/report_loan"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/extra_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/side_business"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="SideBusinessBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/side_business_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/side_business_white" />
+
+                            <TextView
+                                android:id="@+id/side_business_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/side_business"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/home_expenditure"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="HomeExpenditureBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/home_expenditure_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/home_expenditure"
+                                app:srcCompat="@drawable/home_expenditure_white" />
+
+                            <TextView
+                                android:id="@+id/home_expenditure_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/home_expenditure"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/other_expenditure"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="OtherExpenditureBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/other_expenditure_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/other_expenditure"
+                                app:srcCompat="@drawable/other_expenditure_white" />
+
+                            <TextView
+                                android:id="@+id/other_expenditure_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/other_expenditure"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setting_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/reset_all"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="ResetAllBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/reset_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/side_business_white" />
+
+                            <TextView
+                                android:id="@+id/reset_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/reset_all"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
 
     </LinearLayout>
 

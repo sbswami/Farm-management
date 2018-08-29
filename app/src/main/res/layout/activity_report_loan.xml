@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".loans.ReportLoan">
+
+    <Button
+        android:id="@+id/filter_side_report_history_bt"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="FilterReportLoan"
+        android:text="@string/filter"
+        android:textAllCaps="false"
+        android:textSize="@dimen/normal_text" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/small_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/got_loan"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/get_loan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/paid_interest"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/paid_interest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/paid_loan"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/paid_loan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/given_loan"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/give_loan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/given_loan_interest"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/give_loan_paid_interest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/given_loan_paid"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/paid_give_loan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:text="@string/no_date_selected"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+        </TableRow>
+
+
+    </TableLayout>
+
+</LinearLayout>

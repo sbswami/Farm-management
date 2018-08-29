@@ -16,32 +16,27 @@ public class SingleCropData {
     boolean PartnerExists;
     long PartnerCount;
 
-    String PartnerCropName1;
-    long PartnerCropPhone1;
     String PartnerCropId1;
+    String PartnerCropName1;
     double PartnerPercentage1;
 
     String PartnerCropName2;
-    long PartnerCropPhone2;
     String PartnerCropId2;
     double PartnerPercentage2;
 
     String PartnerCropName3;
-    long PartnerCropPhone3;
     String PartnerCropId3;
     double PartnerPercentage3;
 
     String PartnerCropName4;
-    long PartnerCropPhone4;
     String PartnerCropId4;
     double PartnerPercentage4;
 
     String PartnerCropName5;
-    long PartnerCropPhone5;
     String PartnerCropId5;
     double PartnerPercentage5;
 
-    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropName1, long partnerCropPhone1, String partnerCropId1, double partnerPercentage1, String partnerCropName2, long partnerCropPhone2, String partnerCropId2, double partnerPercentage2, String partnerCropName3, long partnerCropPhone3, String partnerCropId3, double partnerPercentage3, String partnerCropName4, long partnerCropPhone4, String partnerCropId4, double partnerPercentage4, String partnerCropName5, long partnerCropPhone5, String partnerCropId5, double partnerPercentage5) {
+    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropId1, String partnerCropName1, double partnerPercentage1, String partnerCropName2, String partnerCropId2, double partnerPercentage2, String partnerCropName3, String partnerCropId3, double partnerPercentage3, String partnerCropName4, String partnerCropId4, double partnerPercentage4, String partnerCropName5, String partnerCropId5, double partnerPercentage5) {
         CropId = cropId;
         CropName = cropName;
         CropType = cropType;
@@ -51,29 +46,24 @@ public class SingleCropData {
         LandArea = landArea;
         PartnerExists = partnerExists;
         PartnerCount = partnerCount;
-        PartnerCropName1 = partnerCropName1;
-        PartnerCropPhone1 = partnerCropPhone1;
         PartnerCropId1 = partnerCropId1;
+        PartnerCropName1 = partnerCropName1;
         PartnerPercentage1 = partnerPercentage1;
         PartnerCropName2 = partnerCropName2;
-        PartnerCropPhone2 = partnerCropPhone2;
         PartnerCropId2 = partnerCropId2;
         PartnerPercentage2 = partnerPercentage2;
         PartnerCropName3 = partnerCropName3;
-        PartnerCropPhone3 = partnerCropPhone3;
         PartnerCropId3 = partnerCropId3;
         PartnerPercentage3 = partnerPercentage3;
         PartnerCropName4 = partnerCropName4;
-        PartnerCropPhone4 = partnerCropPhone4;
         PartnerCropId4 = partnerCropId4;
         PartnerPercentage4 = partnerPercentage4;
         PartnerCropName5 = partnerCropName5;
-        PartnerCropPhone5 = partnerCropPhone5;
         PartnerCropId5 = partnerCropId5;
         PartnerPercentage5 = partnerPercentage5;
     }
 
-    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropName1, long partnerCropPhone1, String partnerCropId1, double partnerPercentage1, String partnerCropName2, long partnerCropPhone2, String partnerCropId2, double partnerPercentage2, String partnerCropName3, long partnerCropPhone3, String partnerCropId3, double partnerPercentage3, String partnerCropName4, long partnerCropPhone4, String partnerCropId4, double partnerPercentage4) {
+    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropId1, String partnerCropName1, double partnerPercentage1, String partnerCropName2, String partnerCropId2, double partnerPercentage2, String partnerCropName3, String partnerCropId3, double partnerPercentage3, String partnerCropName4, String partnerCropId4, double partnerPercentage4) {
         CropId = cropId;
         CropName = cropName;
         CropType = cropType;
@@ -83,25 +73,21 @@ public class SingleCropData {
         LandArea = landArea;
         PartnerExists = partnerExists;
         PartnerCount = partnerCount;
-        PartnerCropName1 = partnerCropName1;
-        PartnerCropPhone1 = partnerCropPhone1;
         PartnerCropId1 = partnerCropId1;
+        PartnerCropName1 = partnerCropName1;
         PartnerPercentage1 = partnerPercentage1;
         PartnerCropName2 = partnerCropName2;
-        PartnerCropPhone2 = partnerCropPhone2;
         PartnerCropId2 = partnerCropId2;
         PartnerPercentage2 = partnerPercentage2;
         PartnerCropName3 = partnerCropName3;
-        PartnerCropPhone3 = partnerCropPhone3;
         PartnerCropId3 = partnerCropId3;
         PartnerPercentage3 = partnerPercentage3;
         PartnerCropName4 = partnerCropName4;
-        PartnerCropPhone4 = partnerCropPhone4;
         PartnerCropId4 = partnerCropId4;
         PartnerPercentage4 = partnerPercentage4;
     }
 
-    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropName1, long partnerCropPhone1, String partnerCropId1, double partnerPercentage1, String partnerCropName2, long partnerCropPhone2, String partnerCropId2, double partnerPercentage2, String partnerCropName3, long partnerCropPhone3, String partnerCropId3, double partnerPercentage3) {
+    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropId1, String partnerCropName1, double partnerPercentage1, String partnerCropName2, String partnerCropId2, double partnerPercentage2, String partnerCropName3, String partnerCropId3, double partnerPercentage3) {
         CropId = cropId;
         CropName = cropName;
         CropType = cropType;
@@ -111,21 +97,18 @@ public class SingleCropData {
         LandArea = landArea;
         PartnerExists = partnerExists;
         PartnerCount = partnerCount;
-        PartnerCropName1 = partnerCropName1;
-        PartnerCropPhone1 = partnerCropPhone1;
         PartnerCropId1 = partnerCropId1;
+        PartnerCropName1 = partnerCropName1;
         PartnerPercentage1 = partnerPercentage1;
         PartnerCropName2 = partnerCropName2;
-        PartnerCropPhone2 = partnerCropPhone2;
         PartnerCropId2 = partnerCropId2;
         PartnerPercentage2 = partnerPercentage2;
         PartnerCropName3 = partnerCropName3;
-        PartnerCropPhone3 = partnerCropPhone3;
         PartnerCropId3 = partnerCropId3;
         PartnerPercentage3 = partnerPercentage3;
     }
 
-    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropName1, long partnerCropPhone1, String partnerCropId1, double partnerPercentage1, String partnerCropName2, long partnerCropPhone2, String partnerCropId2, double partnerPercentage2) {
+    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropId1, String partnerCropName1, double partnerPercentage1, String partnerCropName2, String partnerCropId2, double partnerPercentage2) {
         CropId = cropId;
         CropName = cropName;
         CropType = cropType;
@@ -135,17 +118,15 @@ public class SingleCropData {
         LandArea = landArea;
         PartnerExists = partnerExists;
         PartnerCount = partnerCount;
-        PartnerCropName1 = partnerCropName1;
-        PartnerCropPhone1 = partnerCropPhone1;
         PartnerCropId1 = partnerCropId1;
+        PartnerCropName1 = partnerCropName1;
         PartnerPercentage1 = partnerPercentage1;
         PartnerCropName2 = partnerCropName2;
-        PartnerCropPhone2 = partnerCropPhone2;
         PartnerCropId2 = partnerCropId2;
         PartnerPercentage2 = partnerPercentage2;
     }
 
-    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropName1, long partnerCropPhone1, String partnerCropId1, double partnerPercentage1) {
+    public SingleCropData(String cropId, String cropName, String cropType, String yearOfSowing, String yearOfReaping, Date dateOfCropAdding, double landArea, boolean partnerExists, long partnerCount, String partnerCropId1, String partnerCropName1, double partnerPercentage1) {
         CropId = cropId;
         CropName = cropName;
         CropType = cropType;
@@ -155,9 +136,8 @@ public class SingleCropData {
         LandArea = landArea;
         PartnerExists = partnerExists;
         PartnerCount = partnerCount;
-        PartnerCropName1 = partnerCropName1;
-        PartnerCropPhone1 = partnerCropPhone1;
         PartnerCropId1 = partnerCropId1;
+        PartnerCropName1 = partnerCropName1;
         PartnerPercentage1 = partnerPercentage1;
     }
 
@@ -253,14 +233,6 @@ public class SingleCropData {
         PartnerCropName1 = partnerCropName1;
     }
 
-    public long getPartnerCropPhone1() {
-        return PartnerCropPhone1;
-    }
-
-    public void setPartnerCropPhone1(long partnerCropPhone1) {
-        PartnerCropPhone1 = partnerCropPhone1;
-    }
-
     public String getPartnerCropId1() {
         return PartnerCropId1;
     }
@@ -283,14 +255,6 @@ public class SingleCropData {
 
     public void setPartnerCropName2(String partnerCropName2) {
         PartnerCropName2 = partnerCropName2;
-    }
-
-    public long getPartnerCropPhone2() {
-        return PartnerCropPhone2;
-    }
-
-    public void setPartnerCropPhone2(long partnerCropPhone2) {
-        PartnerCropPhone2 = partnerCropPhone2;
     }
 
     public String getPartnerCropId2() {
@@ -317,14 +281,6 @@ public class SingleCropData {
         PartnerCropName3 = partnerCropName3;
     }
 
-    public long getPartnerCropPhone3() {
-        return PartnerCropPhone3;
-    }
-
-    public void setPartnerCropPhone3(long partnerCropPhone3) {
-        PartnerCropPhone3 = partnerCropPhone3;
-    }
-
     public String getPartnerCropId3() {
         return PartnerCropId3;
     }
@@ -349,13 +305,6 @@ public class SingleCropData {
         PartnerCropName4 = partnerCropName4;
     }
 
-    public long getPartnerCropPhone4() {
-        return PartnerCropPhone4;
-    }
-
-    public void setPartnerCropPhone4(long partnerCropPhone4) {
-        PartnerCropPhone4 = partnerCropPhone4;
-    }
 
     public String getPartnerCropId4() {
         return PartnerCropId4;
@@ -379,14 +328,6 @@ public class SingleCropData {
 
     public void setPartnerCropName5(String partnerCropName5) {
         PartnerCropName5 = partnerCropName5;
-    }
-
-    public long getPartnerCropPhone5() {
-        return PartnerCropPhone5;
-    }
-
-    public void setPartnerCropPhone5(long partnerCropPhone5) {
-        PartnerCropPhone5 = partnerCropPhone5;
     }
 
     public String getPartnerCropId5() {

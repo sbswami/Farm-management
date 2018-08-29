@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".extras.SideBusiness">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/side_expenditure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:onClick="SideExpenditureBt"
+                    android:orientation="vertical"
+                    android:padding="5sp">
+
+                    <ImageView
+                        android:id="@+id/side_expenditure_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:contentDescription="@string/side_expenditure"
+                        app:srcCompat="@drawable/side_business_white" />
+
+                    <TextView
+                        android:id="@+id/side_expenditure_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/side_expenditure"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/side_income"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:onClick="SideIncomeBt"
+                    android:orientation="vertical"
+                    android:padding="5sp">
+
+                    <ImageView
+                        android:id="@+id/side_income_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:contentDescription="@string/side_income"
+                        app:srcCompat="@drawable/income_white" />
+
+                    <TextView
+                        android:id="@+id/side_income_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/side_income"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/side_report"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:onClick="SideReportBt"
+                    android:orientation="vertical"
+                    android:padding="5sp">
+
+                    <ImageView
+                        android:id="@+id/side_report_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:contentDescription="@string/report"
+                        app:srcCompat="@drawable/small_report_white" />
+
+                    <TextView
+                        android:id="@+id/side_report_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/report"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

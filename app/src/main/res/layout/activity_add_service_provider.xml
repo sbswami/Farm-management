@@ -29,6 +29,7 @@
                 android:textSize="@dimen/title_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_service_provider_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_service_provider_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,6 +53,7 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_service_provider_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

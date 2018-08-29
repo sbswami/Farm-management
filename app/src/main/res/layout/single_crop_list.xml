@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/crop_name_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/no_date_selected"
+        android:textColor="@color/small_title_color"
+        android:textSize="@dimen/normal_text" />
+
+    <TextView
+        android:id="@+id/crop_year_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_high_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/no_date_selected"
+        android:textColor="@color/simple_text_view_color"
+        android:textSize="@dimen/normal_text" />
+
+    <TextView
+        android:id="@+id/area_of_land_crop_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_high_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/no_date_selected"
+        android:textColor="@color/simple_text_view_color"
+        android:textSize="@dimen/normal_text" />
+
+    <TextView
+        android:id="@+id/type_crop_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_high_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/no_date_selected"
+        android:textColor="@color/simple_text_view_color"
+        android:textSize="@dimen/normal_text" />
+
+    <LinearLayout
+        android:id="@+id/partner_container_single"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/very_high_margin"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/in_partnership"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:fontFamily="@font/acme"
+            android:text="@string/partners"
+            android:textColor="@color/small_title_color"
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:id="@+id/partner_name_and_sharing_single1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/very_high_margin"
+            android:fontFamily="@font/acme"
+            android:text="@string/no_date_selected"
+            android:textColor="@color/simple_text_view_color"
+            android:visibility="gone"
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:id="@+id/partner_name_and_sharing_single2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/very_high_margin"
+            android:fontFamily="@font/acme"
+            android:text="@string/no_date_selected"
+            android:textColor="@color/simple_text_view_color"
+            android:visibility="gone"
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:id="@+id/partner_name_and_sharing_single3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/very_high_margin"
+            android:fontFamily="@font/acme"
+            android:text="@string/no_date_selected"
+            android:textColor="@color/simple_text_view_color"
+            android:visibility="gone"
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:id="@+id/partner_name_and_sharing_single4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/very_high_margin"
+            android:fontFamily="@font/acme"
+            android:text="@string/no_date_selected"
+            android:textColor="@color/simple_text_view_color"
+            android:visibility="gone"
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:id="@+id/partner_name_and_sharing_single5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/very_high_margin"
+            android:fontFamily="@font/acme"
+            android:text="@string/no_date_selected"
+            android:textColor="@color/simple_text_view_color"
+            android:visibility="gone"
+            android:textSize="@dimen/normal_text" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -4,17 +4,17 @@ import java.util.Date;
 
 public class SinglePartnerData {
 
+    String PartnerCropId;
     String PartnerCropName;
     long PartnerCropPhone;
     String PartnerCropAddress;
-    String PartnerCropId;
     Date PartnerCropAddingDate;
 
-    public SinglePartnerData(String partnerCropName, long partnerCropPhone, String partnerCropAddress, String partnerCropId, Date partnerCropAddingDate) {
+    public SinglePartnerData(String partnerCropId, String partnerCropName, long partnerCropPhone, String partnerCropAddress, Date partnerCropAddingDate) {
+        PartnerCropId = partnerCropId;
         PartnerCropName = partnerCropName;
         PartnerCropPhone = partnerCropPhone;
         PartnerCropAddress = partnerCropAddress;
-        PartnerCropId = partnerCropId;
         PartnerCropAddingDate = partnerCropAddingDate;
     }
 

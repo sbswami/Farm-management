@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#097054</color>
+    <color name="colorPrimaryDark">#00492a</color>
+    <color name="colorAccent">#097054</color>
     <color name="title_color">#000</color>
-    <color name="small_title_color">#22aa22</color>
-    <color name="simple_text_view_color">#111</color>
+    <color name="small_title_color">#026029</color>
+    <color name="simple_text_view_color">#03150d</color>
 
-    <color name="even_color">#c6f2c531</color>
-    <color name="odd_color">#bd31f288</color>
+    <color name="edit_text">#03150d</color>
+
+    <color name="even_color">#c6FFDE00</color>
+    <color name="odd_color">#bdFF9900</color>
+
+    <color name="icon_bg">#ff097054</color>
+    <color name="text_icon">#fff</color>
+
 </resources>

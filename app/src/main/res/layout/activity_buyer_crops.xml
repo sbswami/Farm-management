@@ -4,20 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     tools:context=".crops.BuyerCrops">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_buyer_crops"
-        android:layout_width="55sp"
-        android:layout_height="55sp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginEnd="15dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="addBuyerCropsBt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add_white_24dp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/similar_margin"
-            android:text="@string/buyer"
+            android:hint="@string/buyer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,5 +35,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buyer_crops_search" />
     </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_buyer_crops"
+        android:layout_width="55sp"
+        android:layout_height="55sp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="addBuyerCropsBt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 
 </android.support.constraint.ConstraintLayout>

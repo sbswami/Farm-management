@@ -40,8 +40,8 @@ public class SingleBuyerCropListAdapter extends ArrayAdapter<SingleBuyerCropsLis
         TextView RemainingAmount = rowView.findViewById(R.id.buyer_remaining_amount);
 
         Name.setText(list.getBuyerName());
-        Phone.setText(list.getBuyerPhone());
-        RemainingAmount.setText(list.getRemainingAmount());
+        Phone.setText(context.getString(R.string.phone_number)+": "+list.getBuyerPhone());
+        RemainingAmount.setText(context.getString(R.string.remaining_amount)+": "+list.getRemainingAmount());
 
         return rowView;
     }

@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".crops.AllCropsReport">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/filter_bt"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="filterSingleReport"
+        android:text="@string/filter"
+        android:textAllCaps="false"
+        android:textSize="@dimen/normal_text" />
+    <TextView
+        android:id="@+id/title_buyer_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/unpaid_amount_by_buyer"
+        android:textColor="@color/small_title_color"
+        android:textSize="@dimen/normal_text" />
+
+    <TextView
+        android:id="@+id/unpaid_amount_buyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_high_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/no_date_selected"
+        android:textColor="@color/simple_text_view_color"
+        android:textSize="@dimen/normal_text" />
+
+    <TextView
+        android:id="@+id/title_service_provide_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/unpaid_amount_for_service_provider"
+        android:textColor="@color/small_title_color"
+        android:textSize="@dimen/normal_text" />
+
+    <TextView
+        android:id="@+id/unpaid_amount_service_provider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_high_margin"
+        android:fontFamily="@font/acme"
+        android:text="@string/no_date_selected"
+        android:textColor="@color/simple_text_view_color"
+        android:textSize="@dimen/normal_text" />
+    <ListView
+        android:id="@+id/report_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

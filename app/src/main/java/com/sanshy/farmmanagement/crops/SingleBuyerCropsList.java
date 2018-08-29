@@ -2,14 +2,24 @@ package com.sanshy.farmmanagement.crops;
 
 public class SingleBuyerCropsList {
 
+    String BuyerId;
     String BuyerName;
     String BuyerPhone;
     String RemainingAmount;
 
-    public SingleBuyerCropsList(String buyerName, String buyerPhone, String remainingAmount) {
+    public SingleBuyerCropsList(String buyerId, String buyerName, String buyerPhone, String remainingAmount) {
+        BuyerId = buyerId;
         BuyerName = buyerName;
         BuyerPhone = buyerPhone;
         RemainingAmount = remainingAmount;
+    }
+
+    public String getBuyerId() {
+        return BuyerId;
+    }
+
+    public void setBuyerId(String buyerId) {
+        BuyerId = buyerId;
     }
 
     public String getBuyerName() {

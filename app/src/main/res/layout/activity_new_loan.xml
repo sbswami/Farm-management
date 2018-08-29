@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    tools:context=".loans.NewLoan">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/new_loan_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="@string/new_loan"
+                android:textAlignment="center"
+                android:textColor="@color/title_color"
+                android:textSize="@dimen/title_text" />
+
+            <AutoCompleteTextView
+                android:id="@+id/new_loan_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/remark"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+            <EditText
+                android:textColor="@color/edit_text"
+                        android:id="@+id/new_loan_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/amount"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/normal_text" />
+
+            <RadioGroup
+                android:id="@+id/new_loan_type_of_interest_rate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/similar_margin">
+
+                <RadioButton
+                    android:id="@+id/new_loan_per_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/interest_rate_per_month"
+                    android:textSize="@dimen/normal_text" />
+
+                <RadioButton
+                    android:id="@+id/new_loan_per_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/interest_rate_per_year"
+                    android:textSize="@dimen/normal_text" />
+            </RadioGroup>
+
+
+            <EditText
+                android:textColor="@color/edit_text"
+                        android:id="@+id/new_loan_interest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/interest_rate"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/normal_text" />
+            <RadioGroup
+                android:id="@+id/new_loan_interest_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/similar_margin">
+                <TextView
+                    android:id="@+id/new_loan_select_interest_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/select_interest_type"
+                    android:textColor="@color/simple_text_view_color"
+                    android:textSize="@dimen/normal_text" />
+                <RadioButton
+                    android:id="@+id/new_loan_simple_interest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/simple_interest"
+                    android:textSize="@dimen/normal_text" />
+
+                <RadioButton
+                    android:id="@+id/new_loan_yearly_compound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/yearly_compound"
+                    android:textSize="@dimen/normal_text" />
+                <RadioButton
+                    android:id="@+id/new_loan_six_month_compound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/six_monthly_compound"
+                    android:textSize="@dimen/normal_text" />
+                <RadioButton
+                    android:id="@+id/new_loan_three_month_compound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/three_monthly_compound"
+                    android:textSize="@dimen/normal_text" />
+
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/new_loan_choose_date"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:onClick="chooseDate"
+                    android:text="@string/choose_date"
+                    android:textSize="@dimen/normal_text" />
+
+                <TextView
+                    android:id="@+id/new_loan_show_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/no_date_selected"
+                    android:textColor="@color/simple_text_view_color"
+                    android:textSize="@dimen/normal_text" />
+            </LinearLayout>
+
+            <AutoCompleteTextView
+                android:id="@+id/new_loan_loan_person_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:hint="@string/loan_person"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/normal_text" />
+
+            <RadioGroup
+                android:id="@+id/new_loan_mode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/similar_margin">
+
+                <RadioButton
+                    android:id="@+id/new_loan_get"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/get_type"
+                    android:textSize="@dimen/normal_text" />
+
+                <RadioButton
+                    android:id="@+id/new_loan_give"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/give_type"
+                    android:textSize="@dimen/normal_text" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/new_loan_save_bt"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="makeLoan"
+                android:text="@string/make_loan"
+                android:textSize="@dimen/normal_text" />
+
+            <Button
+                android:id="@+id/new_loan_cancel_bt"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:onClick="cancelLoan"
+                android:text="@string/cancel"
+                android:textSize="@dimen/normal_text" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

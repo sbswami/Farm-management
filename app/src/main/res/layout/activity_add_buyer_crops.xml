@@ -28,6 +28,7 @@
                 android:textSize="@dimen/title_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_buyer_crops_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,6 +40,7 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_buyer_crops_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,6 +52,7 @@
                 android:textSize="@dimen/normal_text" />
 
             <EditText
+                android:textColor="@color/edit_text"
                 android:id="@+id/add_buyer_crops_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:fontFamily="@font/acme"
+                android:id="@+id/remark_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/remark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <AutoCompleteTextView
+
+                android:fontFamily="@font/acme"
+                android:id="@+id/loan_person_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/loan_person"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/filter_interest_rate_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin">
+
+                <RadioButton
+                    android:id="@+id/filter_monthly_interest_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/interest_rate_per_month"
+                    android:textSize="@dimen/normal_text" />
+
+                <RadioButton
+                    android:id="@+id/filter_yearly_interest_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/interest_rate_per_year"
+                    android:textSize="@dimen/normal_text" />
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                android:textColor="@color/edit_text"
+                            android:fontFamily="@font/acme"
+                    android:id="@+id/min_amount_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/min_amount"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                android:textColor="@color/edit_text"
+                            android:fontFamily="@font/acme"
+                    android:id="@+id/max_amount_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/max_amount"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                android:textColor="@color/edit_text"
+                            android:fontFamily="@font/acme"
+                    android:id="@+id/min_interest_rate_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/min_interest_rate"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                android:textColor="@color/edit_text"
+                            android:id="@+id/max_interest_rate_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:hint="@string/max_interest_rate"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/filter_paid_or_not"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin">
+
+                <RadioButton
+                    android:id="@+id/filter_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/paid"
+                    android:textSize="@dimen/normal_text" />
+
+                <RadioButton
+                    android:id="@+id/filter_unpaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/unpaid"
+                    android:textSize="@dimen/normal_text" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/date_type_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:text="@string/date_filter_type"
+                android:textColor="@color/simple_text_view_color"
+                android:textSize="@dimen/normal_text" />
+
+            <RadioGroup
+                android:id="@+id/date_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin">
+
+                <RadioButton
+                    android:id="@+id/single_date_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/single_date"
+                    android:textSize="@dimen/normal_text" />
+
+                <RadioButton
+                    android:id="@+id/between_date_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/between_dates"
+                    android:textSize="@dimen/normal_text" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/single_date_filter_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/single_choose_date_filter"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/choose_date"
+                    android:textSize="@dimen/normal_text" />
+
+                <TextView
+                    android:id="@+id/single_show_date_filter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/no_date_selected"
+                    android:textColor="@color/simple_text_view_color"
+                    android:textSize="@dimen/normal_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/between_dates_cotainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/from_date_filter_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/from_choose_date_filter"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/from_date"
+                        android:textSize="@dimen/normal_text" />
+
+                    <TextView
+                        android:id="@+id/from_show_date_filter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/no_date_selected"
+                        android:textColor="@color/simple_text_view_color"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/to_date_filter_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/to_choose_date_filter"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/to_date"
+                        android:textSize="@dimen/normal_text" />
+
+                    <TextView
+                        android:id="@+id/to_show_date_filter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/similar_margin"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/no_date_selected"
+                        android:textColor="@color/simple_text_view_color"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/filter_bt"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/similar_margin"
+                android:fontFamily="@font/acme"
+                android:text="@string/apply_filter"
+                android:textSize="@dimen/normal_text" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

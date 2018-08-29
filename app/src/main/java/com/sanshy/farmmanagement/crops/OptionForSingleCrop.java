@@ -65,10 +65,38 @@ public class OptionForSingleCrop extends AppCompatActivity {
         intent.putExtra(CURRENT_CROP_ID,CropId);
         startActivity(intent);
     }
+
+    public void SowingCropHistoryBt(View view){
+        Intent intent = new Intent(this, SowingCropHistory.class);
+        intent.putExtra(CURRENT_CROP_ID,CropId);
+        startActivity(intent);
+    }
+    public void OnStandingACropHistoryBt(View view){
+        Intent intent = new Intent(this, OnAStandingCropHistory.class);
+        intent.putExtra(CURRENT_CROP_ID,CropId);
+        startActivity(intent);
+    }
+    public void ReapingCropHistoryBt(View view){
+        Intent intent = new Intent(this,ReapingCropHistory.class);
+        intent.putExtra(CURRENT_CROP_ID,CropId);
+        startActivity(intent);
+    }
+    public void IncomeCropHistoryBt(View view){
+        Intent intent = new Intent(this,IncomeCropHistory.class);
+        intent.putExtra(CURRENT_CROP_ID,CropId);
+        startActivity(intent);
+    }
+
     public void ReportCropBt(View view){
         Intent intent = new Intent(this,ReportSingleCrop.class);
         intent.putExtra(CURRENT_CROP_ID,CropId);
         startActivity(intent);
     }
+    public void EditCropBt(View view){
+        Intent intent = new Intent(this,EditCrop.class);
+        intent.putExtra(CURRENT_CROP_ID,CropId);
+        startActivity(intent);
+    }
+
 
 }

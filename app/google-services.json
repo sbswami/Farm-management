@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "940711153441",
+    "firebase_url": "https://farm-managment.firebaseio.com",
+    "project_id": "farm-managment",
+    "storage_bucket": "farm-managment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940711153441:android:23dbdec87fbe7f02",
+        "android_client_info": {
+          "package_name": "com.sanshy.farmmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940711153441-kss2u06id4a9befbh7drrttg922s0ne5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sanshy.farmmanagement",
+            "certificate_hash": "fb5e96ce50924917ed5f147699445c40f7b5aa7c"
+          }
+        },
+        {
+          "client_id": "940711153441-fvnjdhedejhbvh3orso1fe4laoaeqqq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqkJpZqaWA415tFdjD6z2enWX7jF9M-Zw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940711153441-fvnjdhedejhbvh3orso1fe4laoaeqqq6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

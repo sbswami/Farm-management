@@ -40,7 +40,8 @@
 
 
             <EditText
-                android:id="@+id/reaping_crop_amount"
+                android:textColor="@color/edit_text"
+                        android:id="@+id/reaping_crop_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/similar_margin"
@@ -95,6 +96,7 @@
                 android:id="@+id/reaping_crop_mode_of_payment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:checkedButton="@id/reaping_crop_cash_mode"
                 android:layout_margin="@dimen/similar_margin">
 
                 <RadioButton
@@ -119,7 +121,8 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/reaping_crop_land_area_of_service"
+                android:textColor="@color/edit_text"
+                        android:id="@+id/reaping_crop_land_area_of_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/similar_margin"
@@ -143,7 +146,8 @@
                 android:id="@+id/reaping_crop_paid_partner_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <AutoCompleteTextView
                     android:id="@+id/reaping_crop_partner_name"

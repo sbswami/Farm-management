@@ -6,54 +6,52 @@ public class SingleSowingCropData {
 
     String SowingId;
     String SowingRemark;
+    String CropId;
     double SowingAmount;
     double SowingLandArea;
     Date SowingDate;
     boolean CashService;
     String ServiceProviderName;
-    String ServiceProviderPhoneNumber;
     String ServiceProviderId;
 
     boolean CheckPartner;
     String PartnerName;
-    String PartnerPhoneNumber;
     String PartnerId;
 
-    public SingleSowingCropData(String sowingId, String sowingRemark, double sowingAmount, double sowingLandArea, Date sowingDate, boolean cashService, String serviceProviderName, String serviceProviderPhoneNumber, String serviceProviderId, boolean checkPartner) {
+    public SingleSowingCropData(String sowingId,  String sowingRemark,String cropId, double sowingAmount, double sowingLandArea, Date sowingDate, boolean cashService, String serviceProviderName, String serviceProviderId, boolean checkPartner) {
         SowingId = sowingId;
         SowingRemark = sowingRemark;
+        CropId = cropId;
         SowingAmount = sowingAmount;
         SowingLandArea = sowingLandArea;
         SowingDate = sowingDate;
         CashService = cashService;
         ServiceProviderName = serviceProviderName;
-        ServiceProviderPhoneNumber = serviceProviderPhoneNumber;
         ServiceProviderId = serviceProviderId;
         CheckPartner = checkPartner;
     }
 
-    public SingleSowingCropData(String sowingId, String sowingRemark, double sowingAmount, double sowingLandArea, Date sowingDate, boolean cashService, String serviceProviderName, String serviceProviderPhoneNumber, String serviceProviderId, boolean checkPartner, String partnerName, String partnerPhoneNumber, String partnerId) {
+    public SingleSowingCropData(String sowingId, String sowingRemark, String cropId, double sowingAmount, double sowingLandArea, Date sowingDate, boolean cashService, String serviceProviderName, String serviceProviderId, boolean checkPartner, String partnerName, String partnerId) {
         SowingId = sowingId;
         SowingRemark = sowingRemark;
+        CropId = cropId;
         SowingAmount = sowingAmount;
         SowingLandArea = sowingLandArea;
         SowingDate = sowingDate;
         CashService = cashService;
         ServiceProviderName = serviceProviderName;
-        ServiceProviderPhoneNumber = serviceProviderPhoneNumber;
         ServiceProviderId = serviceProviderId;
         CheckPartner = checkPartner;
         PartnerName = partnerName;
-        PartnerPhoneNumber = partnerPhoneNumber;
         PartnerId = partnerId;
     }
 
-    public String getServiceProviderPhoneNumber() {
-        return ServiceProviderPhoneNumber;
+    public String getCropId() {
+        return CropId;
     }
 
-    public void setServiceProviderPhoneNumber(String serviceProviderPhoneNumber) {
-        ServiceProviderPhoneNumber = serviceProviderPhoneNumber;
+    public void setCropId(String cropId) {
+        CropId = cropId;
     }
 
     public String getSowingId() {
@@ -134,14 +132,6 @@ public class SingleSowingCropData {
 
     public void setPartnerName(String partnerName) {
         PartnerName = partnerName;
-    }
-
-    public String getPartnerPhoneNumber() {
-        return PartnerPhoneNumber;
-    }
-
-    public void setPartnerPhoneNumber(String partnerPhoneNumber) {
-        PartnerPhoneNumber = partnerPhoneNumber;
     }
 
     public String getPartnerId() {
