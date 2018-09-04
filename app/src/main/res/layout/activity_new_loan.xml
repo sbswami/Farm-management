@@ -54,6 +54,7 @@
                 android:id="@+id/new_loan_type_of_interest_rate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:checkedButton="@id/new_loan_per_year"
                 android:layout_margin="@dimen/similar_margin">
 
                 <RadioButton
@@ -93,6 +94,7 @@
                 android:id="@+id/new_loan_interest_type"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:checkedButton="@id/new_loan_yearly_compound"
                 android:layout_margin="@dimen/similar_margin">
                 <TextView
                     android:id="@+id/new_loan_select_interest_type"
@@ -172,7 +174,43 @@
                     android:textColor="@color/simple_text_view_color"
                     android:textSize="@dimen/normal_text" />
             </LinearLayout>
+            <RadioGroup
+                android:id="@+id/new_loan_from"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checkedButton="@id/new_loan_bank"
+                android:layout_margin="@dimen/similar_margin">
+                <TextView
+                    android:id="@+id/loan_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/similar_margin"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/interest_counting_way"
+                    android:textColor="@color/simple_text_view_color"
+                    android:textSize="@dimen/normal_text" />
 
+            <RadioButton
+                android:id="@+id/new_loan_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:text="@string/banking"
+                android:textSize="@dimen/normal_text" />
+
+            <RadioButton
+                android:id="@+id/new_loan_village"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="@font/acme"
+                android:text="@string/traditional"
+                android:textSize="@dimen/normal_text" />
+
+            </RadioGroup>
             <AutoCompleteTextView
                 android:id="@+id/new_loan_loan_person_name"
                 android:layout_width="match_parent"
@@ -188,6 +226,7 @@
                 android:id="@+id/new_loan_mode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:checkedButton="@id/new_loan_get"
                 android:layout_margin="@dimen/similar_margin">
 
                 <RadioButton

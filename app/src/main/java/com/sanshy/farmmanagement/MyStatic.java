@@ -23,7 +23,6 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.sanshy.farmmanagement.crops.SingleIncomeCropData;
 
 import java.text.DateFormat;
@@ -31,11 +30,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class MyStatic {
+
+    public static final double daysInMonth = 30.4375;
 
     public static final String CROP_FIRESTORE_KEY = "Crop";
     public static final String ROLES_FIRESOTORE_KEY = "Roles";
@@ -57,6 +58,16 @@ public class MyStatic {
     public static final String REAPING_CROP_REMARK = "ReapingCropRemark";
     public static final String ON_A_STANDING_CROP_REMARK = "OnAStandingCropRemark";
     public static final String BACK_UP_CROP = "BackUpCrop";
+    public static final String LOAN = "Loan";
+    public static final String LOAN_PERSON = "LoanPerson";
+    public static final String LOAN_REMARK = "LoanRemark";
+    public static final String GET_LOAN = "GetLoan";
+    public static final String GET = "Get";
+    public static final String PAID = "Paid";
+    public static final String GIVE_LOAN = "GiveLoan";
+    public static final String GIVE = "Give";
+    public static final String REPORT_ALL_LOAN = "ReportAllLoan";
+    public static final String ALL_REPORT = "AllReport";
 
 
 
@@ -151,6 +162,31 @@ public class MyStatic {
     public static final String HISTORY = "History";
     public static final String PURCHASE = "Purchase";
     public static final String CROP_ID = "CropID";
+    public static final String GET_LOAN_REPORT = "GetLoanReport";
+    public static final String GIVE_LOAN_REPORT = "GiveLoanReport";
+    public static final String INTEREST_RATE = "InterestRate";
+    public static final String PER_MONTH_INTEREST = "PerMonthInterest";
+    public static final String SIMPLE_INTEREST = "SimpleInterest";
+    public static final String YEARLY_COMPOUND = "YearlyCompound";
+    public static final String SIX_MONTHLY_COMPOUND = "SixMonthlyCompound";
+    public static final String THREE_MONTHLY_COMPOUND = "ThreeMonthlyCompound";
+    public static final String LOAN_PERSON_ID = "LoanPersonId";
+    public static final String LOAN_PERSON_NAME = "LoanPersonName";
+    public static final String LOAN_COMPLETE = "LoanComplete";
+    public static final String GOT_LOAN = "GotLoan";
+    public static final String PAID_INTEREST = "PaidInterest";
+    public static final String PAID_LOAN = "PaidLoan";
+    public static final String GIVEN_LOAN = "GivenLoan";
+    public static final String GIVEN_LOAN_INTEREST = "GivenLoanInterest";
+    public static final String GIVEN_LOAN_PAID = "GivenLoanPaid";
+    public static final String GET_MODE = "GetMode";
+    public static final String LAST_PAY_DATE = "LastPayDate";
+    public static final String AMOUNT_AFTER_LAST_PAYMENT = "AmountAfterLastPayment";
+    public static final String PAID_AMOUNT = "PaidAmount";
+    public static final String BANK_MODE = "BankMode";
+    public static final String PAYING_INTEREST = "PayingInterest";
+    public static final String USED = "Used";
+    public static final String API_KEY = "AIzaSyAn-D7KuoCBxr6eWSVZINU6xzI2hDaR9Nk";
 
 
     public static FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -177,14 +213,17 @@ public class MyStatic {
     public static void setCurrentUserId(String currentUserId) {
         CurrentUserId = currentUserId;
     }
-
     public static final String USERS_DATA_FIRESTORE_KEY = "UsersData";
+
+
     public static DatabaseReference mainData = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId);
     public static DatabaseReference serviceType = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(SERVICE_TYPE);
     public static DatabaseReference cropType = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(CROP_TYPE);
     public static DatabaseReference partnerList = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(PARTNER_LIST);
     public static DatabaseReference buyerList = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(BUYER_LIST);
     public static DatabaseReference serviceProviderList = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(SERVICE_PROVIDER_LIST);
+    public static DatabaseReference loanPersonList = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(LOAN).child(LOAN_PERSON);
+    public static DatabaseReference loanRemarkList = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(LOAN).child(LOAN_REMARK);
     public static DatabaseReference sideExpRemark = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(SIDE_EXP_REMARK);
     public static DatabaseReference sideIncomeRemark = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(SIDE_INCOME_REMARK);
     public static DatabaseReference HomeExpRemark = RealtimeDatabase.child(USERS_DATA_FIRESTORE_KEY).child(CurrentUserId).child(CROP_FIRESTORE_KEY).child(HOME_EXP_REMARK);
@@ -198,9 +237,19 @@ public class MyStatic {
 
 
     public static DocumentReference mainDoc = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId);
+    public static final String ADMIN_WORK = "AdminWork";
+    public static final String UPDATE = "Update";
+    public static DocumentReference updateReference = db.collection(ADMIN_WORK).document(UPDATE);
+    public static DocumentReference videoURL(String videoLang){
+        return db.collection(ADMIN_WORK).document(videoLang);
+    }
+    public static DocumentReference rateUsReference = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(RATE).document(RATE);
     public static CollectionReference partnerLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(ROLES_FIRESOTORE_KEY).collection(PARTNERS_FIRESTORE);
     public static CollectionReference buyerLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(ROLES_FIRESOTORE_KEY).collection(BUYERS_FIRESTORE_KEY);
     public static CollectionReference serviceProviderLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(ROLES_FIRESOTORE_KEY).collection(SERVICE_PROVIDERS_FIRESTORE);
+    public static CollectionReference loanPersonLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(ROLES_FIRESOTORE_KEY).collection(LOAN_PERSON);
+    public static CollectionReference singleGetLoanLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(ROLES_FIRESOTORE_KEY).collection(GET);
+    public static CollectionReference singleGiveLoanLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(ROLES_FIRESOTORE_KEY).collection(GIVE);
     public static CollectionReference singleCropLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(ROLES_FIRESOTORE_KEY).collection(CROPS_FIRESTORE);
     public static CollectionReference singleCropBackUpLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(ROLES_FIRESOTORE_KEY).collection(BACK_UP_CROP);
     public static CollectionReference sideExpLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(EXTRAS_FIRESTORE_KEY).document(SIDE_BUSINESS).collection(SIDE_EXPENDITURE);
@@ -208,23 +257,24 @@ public class MyStatic {
     public static CollectionReference sideReportLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(EXTRAS_FIRESTORE_KEY).document(SIDE_BUSINESS).collection(REPORT_SIDE_BUSINESS);
     public static CollectionReference homeExpLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(EXTRAS_FIRESTORE_KEY).document(HOME_EXPENDITURE).collection(HOME_EXP);
     public static CollectionReference otherExpLocation = db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(EXTRAS_FIRESTORE_KEY).document(OTHER_EXPENDITURE).collection(OTHER_EXP);
+
     public static CollectionReference sowingCropLocation(String CropId){
         return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(SOWING_CROP).collection(SOWING);
     }
     public static CollectionReference onAStandingCropLocation(String CropId){
-        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(ON_A_STANDING_CROP).collection(ON_A_STANDING);
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(ON_A_STANDING_CROP).collection(SOWING);
     }
     public static CollectionReference reapingCropLocation(String CropId){
-        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(REAPING_CROP).collection(REAPING);
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(REAPING_CROP).collection(SOWING);
     }
     public static CollectionReference incomeCropLocation(String CropId){
         return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(INCOME_CROP).collection(INCOME);
     }
     public static CollectionReference singleCropReportLocation(String CropId,String FilterType){
-        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(REPORT_CROP).collection(FilterType);
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SINGLE_CROP).collection(CropId).document(FilterType).collection(REPORT_CROP);
     }
     public static CollectionReference cropReportLocation(String FilterType){
-        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(REPORT_CROP).collection(FilterType);
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(FilterType).collection(REPORT_CROP);
     }
     public static CollectionReference payBuyerLocation(String BuyerId){
         return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(BUYER).collection(HISTORY).document(BuyerId).collection(PAY);
@@ -236,8 +286,149 @@ public class MyStatic {
         return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SERVICE_PROVIDER).collection(HISTORY).document(ServiceProviderId).collection(PAY);
     }
     public static CollectionReference purchaseServiceProviderLocation(String ServiceProviderId){
-        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SERVICE_PROVIDER).collection(HISTORY).document(ServiceProviderId).collection(PURCHASE);
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(CROP_FIRESTORE_KEY).document(SERVICE_PROVIDER).collection(HISTORY).document(ServiceProviderId).collection(SOWING);
     }
+    public static CollectionReference paidGetLoanLocation(String loanId){
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(loanId).collection(GET_LOAN);
+    }
+    public static CollectionReference paidGiveLoanLocation(String loanId){
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(loanId).collection(GIVE_LOAN);
+    }
+
+    public static CollectionReference singleGetLoanPersonLocation(String loanPerson){
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(loanPerson).collection(GET);
+    }
+
+    public static CollectionReference singleGiveLoanPersonLocation(String loanPerson){
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(loanPerson).collection(GIVE);
+    }
+
+    public static CollectionReference reportGetLoanLocation(String loanId,String FilterType){
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(GET_LOAN).collection(loanId).document(FilterType).collection(GET_LOAN_REPORT);
+    }
+
+    public static CollectionReference reportGiveLoanLocation(String loanId,String FilterType){
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(GIVE_LOAN).collection(loanId).document(FilterType).collection(GIVE_LOAN_REPORT);
+    }
+
+    public static CollectionReference reportLoanLocation(String FilterType){
+        return db.collection(USERS_DATA_FIRESTORE_KEY).document(CurrentUserId).collection(LOAN).document(FilterType).collection(REPORT_ALL_LOAN);
+    }
+
+    public static void postGiveLoanReport(final String loanId, final String FilterType, final String PostType, final Date date, final double AmountR, final String nonePostType1, final String nonePostType2){
+        reportGiveLoanLocation(loanId,FilterType).document(DateToString2(date)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Map<String, Object> myMap = new HashMap<>();
+                double nonePostValue = 0.0;
+                if (documentSnapshot.exists()){
+                    double oldValue = documentSnapshot.getDouble(PostType);
+                    double postValue = oldValue + AmountR;
+                    myMap.put(PostType,postValue);
+                    reportGiveLoanLocation(loanId,FilterType).document(DateToString2(date)).update(myMap);
+                }
+                else{
+                    myMap.put(PostType,AmountR);
+                    myMap.put(nonePostType1,nonePostValue);
+                    myMap.put(nonePostType2,nonePostValue);
+                    myMap.put(DATE,date);
+                    reportGiveLoanLocation(loanId,FilterType).document(DateToString2(date)).set(myMap);
+                }
+            }
+        });
+    }
+    public static void lessGiveLoanReport(final String loanId, final String FilterType, final String PostType, final Date date, final double AmountR){
+        reportGiveLoanLocation(loanId,FilterType).document(DateToString2(date)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Map<String, Object> myMap = new HashMap<>();
+                if (documentSnapshot.exists()){
+                    double oldValue = documentSnapshot.getDouble(PostType);
+                    double postValue = oldValue - AmountR;
+                    myMap.put(PostType,postValue);
+                    reportGiveLoanLocation(loanId,FilterType).document(DateToString2(date)).update(myMap);
+                }
+            }
+        });
+    }
+
+    public static void postGetLoanReport(final String loanId, final String FilterType, final String PostType, final Date date, final double AmountR, final String nonePostType1, final String nonePostType2){
+        reportGetLoanLocation(loanId,FilterType).document(DateToString2(date)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Map<String, Object> myMap = new HashMap<>();
+                double nonePostValue = 0.0;
+                if (documentSnapshot.exists()){
+                    double oldValue = documentSnapshot.getDouble(PostType);
+                    double postValue = oldValue + AmountR;
+                    myMap.put(PostType,postValue);
+                    reportGetLoanLocation(loanId,FilterType).document(DateToString2(date)).update(myMap);
+                }
+                else{
+                    myMap.put(PostType,AmountR);
+                    myMap.put(nonePostType1,nonePostValue);
+                    myMap.put(nonePostType2,nonePostValue);
+                    myMap.put(DATE,date);
+                    reportGetLoanLocation(loanId,FilterType).document(DateToString2(date)).set(myMap);
+                }
+            }
+        });
+    }
+    public static void lessGetLoanReport(final String loanId, final String FilterType, final String PostType, final Date date, final double AmountR){
+        reportGetLoanLocation(loanId,FilterType).document(DateToString2(date)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Map<String, Object> myMap = new HashMap<>();
+                if (documentSnapshot.exists()){
+                    double oldValue = documentSnapshot.getDouble(PostType);
+                    double postValue = oldValue - AmountR;
+                    myMap.put(PostType,postValue);
+                    reportGetLoanLocation(loanId,FilterType).document(DateToString2(date)).update(myMap);
+                }
+            }
+        });
+    }
+
+    public static void postLoanAllReport(final String FilterType, final String PostType, final Date date, final double AmountR, final String nonePostType1, final String nonePostType2, final String nonePostType3, final String nonePostType4, final String nonePostType5){
+        reportLoanLocation(FilterType).document(DateToString2(date)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Map<String, Object> myMap = new HashMap<>();
+                double nonePostValue = 0.0;
+                if (documentSnapshot.exists()){
+                    double oldValue = documentSnapshot.getDouble(PostType);
+                    double postValue = oldValue + AmountR;
+                    myMap.put(PostType,postValue);
+                    reportLoanLocation(FilterType).document(DateToString2(date)).update(myMap);
+                }
+                else{
+                    myMap.put(PostType,AmountR);
+                    myMap.put(nonePostType1,nonePostValue);
+                    myMap.put(nonePostType2,nonePostValue);
+                    myMap.put(nonePostType3,nonePostValue);
+                    myMap.put(nonePostType4,nonePostValue);
+                    myMap.put(nonePostType5,nonePostValue);
+                    myMap.put(DATE,date);
+                    reportLoanLocation(FilterType).document(DateToString2(date)).set(myMap);
+                }
+            }
+        });
+    }
+    public static void lessLoanAllReport(final String FilterType, final String PostType, final Date date, final double AmountR){
+        reportLoanLocation(FilterType).document(DateToString2(date)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Map<String, Object> myMap = new HashMap<>();
+                if (documentSnapshot.exists()){
+                    double oldValue = documentSnapshot.getDouble(PostType);
+                    double postValue = oldValue - AmountR;
+                    myMap.put(PostType,postValue);
+                    reportLoanLocation(FilterType).document(DateToString2(date)).update(myMap);
+                }
+            }
+        });
+    }
+
     public static void postSingleReport(final String FilterType, final String CropId, final boolean CashMode, final String AmountSt, final String CropWay){
         singleCropReportLocation(CropId,FilterType).document(CropWay).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -275,7 +466,6 @@ public class MyStatic {
             }
         });
     }
-
     public static void lessSingleReport(final boolean CashMode,final String CropId,final String FilterType, final double AmountR,final String CropWay) {
         singleCropReportLocation(CropId, FilterType).document(CropWay).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -469,6 +659,60 @@ public class MyStatic {
         });
     }
 
+    public static double CalculateIterest(Date FFinalDate,
+                                          Date FInitialDate,
+                                          double FInterestRate,
+                                          boolean FisPerMonthInterest,
+                                          boolean FisSimpleInterest,
+                                          boolean FisYearlyCompound,
+                                          boolean FisSixMonthlyCompound,
+                                          boolean FisThreeMonthlyCompound,
+                                          double CalculatingLoanAmount) {
+
+        double DiffMonth = MonthsBetweenDates(FInitialDate, FFinalDate);
+        double DiffDay = DayInDate(FFinalDate)-DayInDate(FInitialDate);
+
+        Double temp = Double.valueOf(DiffDay);
+        Double temp2 = Double.valueOf(daysInMonth);
+
+
+        DiffMonth += temp/temp2;
+
+        if (!FisPerMonthInterest){
+            FInterestRate = FInterestRate/12;
+        }
+
+        double CompoundInPeriod = 0;
+
+        if (FisYearlyCompound){
+            CompoundInPeriod = 12;
+        }
+        if (FisSixMonthlyCompound){
+            CompoundInPeriod = 6;
+        }
+        if (FisThreeMonthlyCompound){
+            CompoundInPeriod = 3;
+        }
+
+        double MainInterest;
+        double totalAmount;
+
+        if (FisSimpleInterest){
+            MainInterest = (FInterestRate*CalculatingLoanAmount*DiffMonth)/100;
+            totalAmount = MainInterest+CalculatingLoanAmount;
+        }else{
+            totalAmount = CalculatingLoanAmount*Math.pow((1+((FInterestRate*CompoundInPeriod)/100)),(DiffMonth/CompoundInPeriod));
+            MainInterest = totalAmount - CalculatingLoanAmount;
+        }
+
+
+
+
+        return MainInterest;
+
+    }
+
+
     public static void setSnipper(Activity activity,AutoCompleteTextView ACTV, ArrayList<String> List){
         ArrayAdapter<String> Adapter = new ArrayAdapter<>(activity,android.R.layout.simple_spinner_dropdown_item,List);
         ACTV.setAdapter(Adapter);
@@ -534,8 +778,29 @@ public class MyStatic {
         SimpleDateFormat myFormat = new SimpleDateFormat("ddMMyyyy");
         return myFormat.format(date);
     }
+    public static double DayInDate(Date date){
+        SimpleDateFormat myFormat = new SimpleDateFormat("dd");
+        return Double.parseDouble(myFormat.format(date));
+    }
+    public static double MonthInDate(Date date){
+        SimpleDateFormat myFormat = new SimpleDateFormat("MM");
+        return Double.parseDouble(myFormat.format(date));
+    }
+    public static double MonthsBetweenDates(Date startDate, Date endDate){
+
+        Calendar startCalendar = new GregorianCalendar();
+        startCalendar.setTime(startDate);
+        Calendar endCalendar = new GregorianCalendar();
+        endCalendar.setTime(endDate);
+
+        double diffYear = endCalendar.get(Calendar.YEAR) - startCalendar.get(Calendar.YEAR);
+        return diffYear*12 + endCalendar.get(Calendar.MONTH) - startCalendar.get(Calendar.MONTH);
+    }
 
     public static boolean incomeUndo = false;
+
+    public static boolean checkerUndo = false;
+
     public static boolean ShowDetails(Context context,String[] List){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
@@ -665,6 +930,7 @@ public class MyStatic {
     public static int fYear = 0;
     public static Date staticDate = new Date();
     public static Date singleDateStatic = new Date();
+    public static Date singleDateStaticTill = new Date();
     public static Date fromDateStatic = new Date();
     public static Date toDateStatic = new Date();
 
@@ -682,7 +948,7 @@ public class MyStatic {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         fday = dayOfMonth;
-                        fmonth = ++monthOfYear;
+                        fmonth = monthOfYear;
                         fYear = year;
 
                         Date currentDate = new Date();
@@ -697,7 +963,7 @@ public class MyStatic {
 
                         Calendar cal = Calendar.getInstance();
                         cal.setTimeInMillis(0);
-                        cal.set(fYear,fmonth, fday,hour,min,sec);
+                        cal.set(fYear,fmonth++, fday, 0, 0, 0);
                         Date chosenDate = cal.getTime();
 
                         dateShow.setText(fday+"/"+fmonth+"/"+fYear);
@@ -726,7 +992,7 @@ public class MyStatic {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         fday = dayOfMonth;
-                        fmonth = ++monthOfYear;
+                        fmonth = monthOfYear;
                         fYear = year;
 
                         Date currentDate = new Date();
@@ -741,11 +1007,14 @@ public class MyStatic {
 
                         Calendar cal = Calendar.getInstance();
                         cal.setTimeInMillis(0);
-                        cal.set(fYear,fmonth, fday,hour,min,sec);
+                        cal.set(fYear,fmonth, fday,0,0,0);
                         Date chosenDate = cal.getTime();
-
+                        cal.set(fYear,fmonth, fday,23,59,59);
+                        Date tillDate = cal.getTime();
+                        ++fmonth;
                         dateShow.setText(fday+"/"+fmonth+"/"+fYear);
                         singleDateStatic = chosenDate;
+                        singleDateStaticTill = tillDate;
 
                     }
                 }, mYear, mMonth, mDay);
@@ -769,7 +1038,7 @@ public class MyStatic {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         fday = dayOfMonth;
-                        fmonth = ++monthOfYear;
+                        fmonth = monthOfYear;
                         fYear = year;
 
                         Date currentDate = new Date();
@@ -784,7 +1053,7 @@ public class MyStatic {
 
                         Calendar cal = Calendar.getInstance();
                         cal.setTimeInMillis(0);
-                        cal.set(fYear,fmonth, fday,hour,min,sec);
+                        cal.set(fYear,fmonth++, fday,0,0,0);
                         Date chosenDate = cal.getTime();
 
                         dateShow.setText(fday+"/"+fmonth+"/"+fYear);
@@ -812,7 +1081,7 @@ public class MyStatic {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         fday = dayOfMonth;
-                        fmonth = ++monthOfYear;
+                        fmonth = monthOfYear;
                         fYear = year;
 
                         Date currentDate = new Date();
@@ -827,7 +1096,7 @@ public class MyStatic {
 
                         Calendar cal = Calendar.getInstance();
                         cal.setTimeInMillis(0);
-                        cal.set(fYear,fmonth, fday,hour,min,sec);
+                        cal.set(fYear,fmonth++, fday,23,59,59);
                         Date chosenDate = cal.getTime();
 
                         dateShow.setText(fday+"/"+fmonth+"/"+fYear);

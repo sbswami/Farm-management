@@ -17,7 +17,7 @@
         android:title="@string/extra" />
     <item
         android:id="@+id/navigation_setting"
-        android:icon="@drawable/extra_black"
+        android:icon="@drawable/setting_icon"
         android:title="@string/setting" />
 
 </menu>

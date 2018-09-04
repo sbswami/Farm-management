@@ -7,6 +7,7 @@ public class PayHistoryDataList {
     Date date;
     double amount;
 
+
     public PayHistoryDataList(String id, Date date, double amount) {
         Id = id;
         this.date = date;

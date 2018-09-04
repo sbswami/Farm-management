@@ -480,18 +480,12 @@ public class HistoryOfSingleBuyerPurchase extends AppCompatActivity {
 
         BuyerFilter.setText(BuyerName);
 
-        AutoCompleteTextView PartnerFilter = customFilterView.findViewById(R.id.partner_filter);
-        EditText PartnerPercentage = customFilterView.findViewById(R.id.sharing_percentage_filter);
-
         RadioGroup FilterModeOfPayment = customFilterView.findViewById(R.id.filter_mode_of_payment);
         RadioButton FilterCashMode = customFilterView.findViewById(R.id.filter_cash_mode);
         RadioButton FilterBorrowMode = customFilterView.findViewById(R.id.filter_borrow_mode);
 
         EditText MinAmountFilter = customFilterView.findViewById(R.id.min_amount_filter);
         EditText MaxAmountFilter = customFilterView.findViewById(R.id.max_amount_filter);
-
-        EditText MinRateFilter = customFilterView.findViewById(R.id.min_rate_filter);
-        EditText MaxRateFilter = customFilterView.findViewById(R.id.max_rate_filter);
 
         RadioGroup DateFilter = customFilterView.findViewById(R.id.date_filter);
         RadioButton SingleDateFilter = customFilterView.findViewById(R.id.single_date_filter);

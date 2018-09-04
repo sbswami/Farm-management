@@ -164,7 +164,6 @@ public class SideIncome extends AppCompatActivity {
 
                     sideReportLocation.document(DateToString2(staticDate)).set(DataMap);
                 }
-                HideProgress();
             }
         });
 

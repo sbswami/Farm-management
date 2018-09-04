@@ -8,13 +8,23 @@ public class SinglePersonLoan {
     long Phone;
     String Address;
     Date DateOfCreation;
+    boolean Used;
 
-    public SinglePersonLoan(String id, String name, long phone, String address, Date dateOfCreation) {
+    public SinglePersonLoan(String id, String name, long phone, String address, Date dateOfCreation, boolean used) {
         Id = id;
         Name = name;
         Phone = phone;
         Address = address;
         DateOfCreation = dateOfCreation;
+        Used = used;
+    }
+
+    public boolean isUsed() {
+        return Used;
+    }
+
+    public void setUsed(boolean used) {
+        Used = used;
     }
 
     public String getId() {

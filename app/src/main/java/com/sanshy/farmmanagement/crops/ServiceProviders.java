@@ -104,6 +104,10 @@ public class ServiceProviders extends AppCompatActivity {
 
                                         serviceProviderList.setValue(Servicer);
                                         ShowDialog(ServiceProviders.this,getString(R.string.deleted));
+
+                                        Hint.remove(ServiceList.get(position).getBuyerName());
+                                        ServiceList.remove(position);
+
                                     }
                                     myAdapter.notifyDataSetChanged();
                                     HideProgress();

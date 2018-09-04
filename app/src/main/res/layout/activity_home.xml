@@ -306,7 +306,7 @@
                                 android:id="@+id/get_loan_list_icon"
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
-                                android:contentDescription="@string/get_loan_list"
+                                android:contentDescription="@string/get_and_paid_loan_list"
                                 app:srcCompat="@drawable/get_loan_history_white" />
 
                             <TextView
@@ -336,7 +336,7 @@
                                 android:id="@+id/give_loan_list_icon"
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
-                                android:contentDescription="@string/give_loan_list"
+                                android:contentDescription="@string/give_and_paid_loan_list"
                                 app:srcCompat="@drawable/give_loan_history_white" />
 
                             <TextView
@@ -351,71 +351,6 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:id="@+id/get_and_paid_loan_list"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5sp"
-                            android:layout_weight="1"
-                            android:background="@color/icon_bg"
-                            android:gravity="center"
-                            android:onClick="getAndPaidLoanListBt"
-                            android:orientation="vertical"
-                            android:padding="5sp">
-
-                            <ImageView
-                                android:id="@+id/get_and_paid_loan_list_icon"
-                                android:layout_width="100sp"
-                                android:layout_height="100sp"
-                                android:contentDescription="@string/get_and_paid_loan_list"
-                                app:srcCompat="@drawable/get_loan_paid_white" />
-
-                            <TextView
-                                android:id="@+id/get_and_paid_loan_list_text"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/acme"
-                                android:text="@string/get_and_paid_loan_list"
-                                android:textAlignment="center"
-                                android:textColor="@color/text_icon"
-                                android:textSize="@dimen/normal_text" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/give_and_paid_loan_list"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5sp"
-                            android:layout_weight="1"
-                            android:background="@color/icon_bg"
-                            android:gravity="center"
-                            android:onClick="giveAndPaidLoanListBt"
-                            android:orientation="vertical"
-                            android:padding="5sp">
-
-                            <ImageView
-                                android:id="@+id/give_and_paid_loan_list_icon"
-                                android:layout_width="100sp"
-                                android:layout_height="100sp"
-                                android:contentDescription="@string/give_and_paid_loan_list"
-                                app:srcCompat="@drawable/give_loan_paid_white" />
-
-                            <TextView
-                                android:id="@+id/give_and_paid_loan_list_text"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/acme"
-                                android:text="@string/give_and_paid_loan_list"
-                                android:textAlignment="center"
-                                android:textColor="@color/text_icon"
-                                android:textSize="@dimen/normal_text" />
-                        </LinearLayout>
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -462,7 +397,8 @@
             android:id="@+id/extra_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -615,7 +551,7 @@
                                 android:layout_width="100sp"
                                 android:layout_height="100sp"
                                 android:contentDescription="@string/side_business"
-                                app:srcCompat="@drawable/side_business_white" />
+                                app:srcCompat="@drawable/reset_icon" />
 
                             <TextView
                                 android:id="@+id/reset_text"
@@ -628,8 +564,206 @@
                                 android:textSize="@dimen/normal_text" />
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:id="@+id/share_app"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="ShareApp"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/share_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/share_icon" />
+
+                            <TextView
+                                android:id="@+id/share_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/share"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:id="@+id/help"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="HelpBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/help_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/help_icon" />
+
+                            <TextView
+                                android:id="@+id/help_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/help"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/log_out"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="LogOut"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/log_out_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/log_out_icon" />
+
+                            <TextView
+                                android:id="@+id/loa_out_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/log_out"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:id="@+id/help_video"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="HelpVideoBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/help_video_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/video_icon" />
+
+                            <TextView
+                                android:id="@+id/help_video_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/help"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/sanjay_video"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="SanjayChannelBt"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/sanjay_video_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/video_icon" />
+
+                            <TextView
+                                android:id="@+id/sanjay_video_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/sanjay_kumar_swami"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:id="@+id/buy_sell"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@color/icon_bg"
+                            android:onClick="BuySellApp"
+                            android:orientation="vertical"
+                            android:padding="5sp">
+
+                            <ImageView
+                                android:id="@+id/buy_sell_icon"
+                                android:layout_width="100sp"
+                                android:layout_height="100sp"
+                                android:contentDescription="@string/side_business"
+                                app:srcCompat="@drawable/buy_sell" />
+
+                            <TextView
+                                android:id="@+id/buy_sell_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/acme"
+                                android:text="@string/buy_sell_inventory"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_icon"
+                                android:textSize="@dimen/normal_text" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>

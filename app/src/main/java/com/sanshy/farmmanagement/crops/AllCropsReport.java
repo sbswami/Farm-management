@@ -32,6 +32,7 @@ import static com.sanshy.farmmanagement.MyStatic.INCOME;
 import static com.sanshy.farmmanagement.MyStatic.ON_A_STANDING;
 import static com.sanshy.farmmanagement.MyStatic.REAPING;
 import static com.sanshy.farmmanagement.MyStatic.REMAINING_AMOUNT;
+import static com.sanshy.farmmanagement.MyStatic.SELF;
 import static com.sanshy.farmmanagement.MyStatic.SERVICE_PROVIDER;
 import static com.sanshy.farmmanagement.MyStatic.SOWING;
 import static com.sanshy.farmmanagement.MyStatic.ShowProgress;
@@ -100,6 +101,11 @@ public class AllCropsReport extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(AllCropsReport.this, temp[which], Toast.LENGTH_SHORT).show();
                 AppliedFilter = temp[which];
+                if (which==0){
+                    AppliedFilter = ALL;
+                }else if(which==1){
+                    AppliedFilter = SELF;
+                }
             }
         }).setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
             @Override

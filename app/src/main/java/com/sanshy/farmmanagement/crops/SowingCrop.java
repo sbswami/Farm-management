@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -202,10 +203,12 @@ public class SowingCrop extends AppCompatActivity {
         CashMode = R.id.sowing_cash_mode == CashId;
 
         if(RemarkSt.isEmpty()){
+            Toast.makeText(this, getString(R.string.fill_information), Toast.LENGTH_SHORT).show();
             SowingCropRemark.setError(getString(R.string.fill_it));
             return;
         }
         if (AmountSt.isEmpty()){
+            Toast.makeText(this, getString(R.string.fill_information), Toast.LENGTH_SHORT).show();
             SowingCropAmount.setError(getString(R.string.fill_it));
             return;
         }
@@ -215,19 +218,23 @@ public class SowingCrop extends AppCompatActivity {
 
         }
         if (ServiceProviderNameSt.isEmpty()){
+            Toast.makeText(this, getString(R.string.fill_information), Toast.LENGTH_SHORT).show();
             SowingCropServiceProviderName.setError(getString(R.string.fill_it));
             return;
         }
 
         if (!(ServiceProviderList.contains(ServiceProviderNameSt))){
+            Toast.makeText(this, getString(R.string.fill_information), Toast.LENGTH_SHORT).show();
             ShowDialog(this,getString(R.string.first_add_service_provider));
             return;
         }
         if (ByPartner&&PartnerNameSt.isEmpty()){
+            Toast.makeText(this, getString(R.string.fill_information), Toast.LENGTH_SHORT).show();
             SowingCropPartnerName.setError(getString(R.string.fill_it));
             return;
         }
         if (ByPartner&&(!PartnerList.contains(PartnerNameSt))){
+            Toast.makeText(this, getString(R.string.fill_information), Toast.LENGTH_SHORT).show();
             ShowDialog(this, getString(R.string.first_add_partner));
             return;
         }

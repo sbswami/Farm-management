@@ -89,6 +89,8 @@ public class SingleCrop extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 singleCropBackUpLocation.document(CropId).set(CloudItem);
                 singleCropLocation.document(CropId).delete();
+
+                //TODO Delete all Neseted loops
                 finish();
             }
         });

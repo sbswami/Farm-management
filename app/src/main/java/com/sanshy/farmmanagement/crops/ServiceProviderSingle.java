@@ -45,7 +45,7 @@ public class ServiceProviderSingle extends AppCompatActivity {
     String ServicePN;
     String ServicePId;
     String ServicePRemainingAmount;
-    
+    double nowRemain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +55,7 @@ public class ServiceProviderSingle extends AppCompatActivity {
         ServicePN = intent.getStringExtra(SERVICE_PROVIDER_NAME);
         ServicePId = intent.getStringExtra(SERVICE_PROVIDER_ID);
         ServicePRemainingAmount = intent.getStringExtra(SERVICE_PROVIDER_REMAINING_AMOUNT);
+        nowRemain = Double.parseDouble(ServicePRemainingAmount);
 
         ServicePName = findViewById(R.id.service_provider_name_single);
         RemainingAmount = findViewById(R.id.service_provider_remaining_amount_single);
@@ -111,7 +112,7 @@ public class ServiceProviderSingle extends AppCompatActivity {
                     removeRemainingAmountServiceProvider(ServicePId,Double.parseDouble(PayingAString));
                     lessAllRemainingReport(ALL,Double.parseDouble(PayingAString),SERVICE_PROVIDER);
                     PayingAmount.setText("");
-                    double nowRemain = Double.parseDouble(ServicePRemainingAmount)-Double.parseDouble(PayingAString);
+                    nowRemain = nowRemain-Double.parseDouble(PayingAString);
                     RemainingAmount.setText(String.valueOf(nowRemain));
                     ShowDialog(ServiceProviderSingle.this,getString(R.string.saved));
                 }

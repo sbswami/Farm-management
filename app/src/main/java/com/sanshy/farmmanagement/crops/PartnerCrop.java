@@ -148,7 +148,8 @@ public class PartnerCrop extends AppCompatActivity {
                                                 Servicer.remove(PartnerList.get(position).getPartnerId());
 
                                                 partnerList.setValue(Servicer);
-
+                                                Hint.remove(PartnerList.get(position).getPartnerName());
+                                                PartnerList.remove(position);
                                             }
                                             myAdapter.notifyDataSetChanged();
                                         }

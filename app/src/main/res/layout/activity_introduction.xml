@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroductionActivity"
+    android:orientation="vertical"
+    android:background="@drawable/first_screen_farm">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:onClick="GoHomeBt"
+            android:layout_margin="0dp"
+            android:src="@drawable/first_screen_farm" />
+
+        <Button
+            style="@style/com_facebook_button_like"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/acme"
+            android:onClick="GoHomeBt"
+            android:text="@string/get_started"
+            android:textSize="@dimen/large_text" />
+    </LinearLayout>
+
+</LinearLayout>

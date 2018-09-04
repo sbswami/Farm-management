@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     tools:context=".loans.LoanPerson">
 
     <LinearLayout
@@ -20,7 +22,7 @@
             android:id="@+id/loan_person_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/partner_name"
+            android:hint="@string/loan_person"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

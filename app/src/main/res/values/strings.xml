@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Farm Management</string>
+    <string name="app_name">Agriculture Money Manager</string>
 
     <array name="partner_count">
         <item>1</item>
@@ -74,7 +74,6 @@
     <string name="rate_per_weight">Rate Per Weight</string>
     <string name="weight">Weight</string>
     <string name="buyer_name">Buyer Name</string>
-    <string name="sharing_amount_partner_1">Sharing Amount With Partner 1</string>
     <string name="sharing_amount_with">Sharing Amount With</string>
     <string name="sharing_percentage_with">Sharing Percentage With</string>
     <string name="my_income">My Income</string>
@@ -159,7 +158,7 @@
     <string name="given_loan_paid">Given Loan Paid</string>
     <string name="history_of_purchase">History of Purchase</string>
     <string name="report_loan">Report Loan</string>
-    <string name="loading">Loanding</string>
+    <string name="loading">Loading</string>
     <string name="please_sign_in_again">Please Sign In Again.</string>
     <string name="saved">Saved</string>
     <string name="person_with_same_name_already_exists">Person With Same Already Exists.</string>
@@ -189,4 +188,52 @@
     <string name="you_are_removing_some_partners_that_will_cause">You are removing some partners that will cause problem</string>
     <string name="setting">Setting</string>
     <string name="reset_all">Reset All</string>
+    <string name="first_add_loan_person">First Add Loan Person.</string>
+    <string name="fill_information">Fill Information</string>
+    <string name="please_check_any_one">Please Check Any One</string>
+    <string name="loan_detail">Loan Detail</string>
+    <string name="pay_loan">Pay Loan</string>
+    <string name="loan_report">Loan Report</string>
+    <string name="this_loan_is_paid">This Loan Is Paid</string>
+    <string name="paid_amount">Paid Amount</string>
+    <string name="loan_amount">Loan Amount</string>
+    <string name="after_last_payment">After Last Payment</string>
+    <string name="last_pay_date">Last Pay Date</string>
+    <string name="banking">Banking</string>
+    <string name="traditional">Traditional</string>
+    <string name="undo_loan_message">It Will Subtract It\'s Own Report From Main Report and It Will Result That It Seems Like Loan was not Made.</string>
+    <string name="delete_paid_loan_message">Delete Paid Loan and Free Up List.</string>
+    <string name="please_wait">Please Wait !!</string>
+    <string name="can_not_delete">Can Not Because It is Used.</string>
+    <string name="please_fill_correct_value">Please Fill Correct Value</string>
+    <string name="default_min_amount" translatable="false">0</string>
+    <string name="default_max_amount" translatable="false">1000000000</string>
+    <string name="cooming_soon">ComingSoon</string>
+    <string name="get_started">Get Started</string>
+    <string name="first_open">first_open</string>
+    <string name="opened">opened</string>
+    <string name="update">Update</string>
+    <string name="wow_new_version_">Wow New Version Available!</string>
+    <string name="update_now_">Update Now</string>
+    <string name="rate_us_text">Rate Us</string>
+    <string name="rate_us_request_dialog_">We are working for provide you better thing as we can, You Can Reward us by giving 5 Star.</string>
+    <string name="never_">Never</string>
+    <string name="not_now_">Not Now</string>
+    <string name="share_subject">My Favourite App, I Love It</string>
+    <string name="share_app_via">Share App Via</string>
+    <string name="agriculture_money_manager">Agriculture Money Manager</string>
+    <string name="help">Help</string>
+    <string name="play_store_address" translatable="false">https://play.google.com/store/apps/details?id=com.sanshy.farmmanagement</string>
+    <string name="direct_play_store" translatable="false">market://details?id=com.sanshy.farmmanagement</string>
+    <string name="email_address" translatable="false">Gmail : sbswami24@gmail.com</string>
+    <string name="whats_app_detail" translatable="false">WhatsApp : +918239199344</string>
+    <string name="buy_sell_inventory">Buy Sell Inventory</string>
+    <string name="log_out">Log Out</string>
+    <string name="buy_sell_play_store_location" translatable="false">market://details?id=com.sanshy.buysellinventory</string>
+    <string name="failed_to_load_video">Failed To Load Video</string>
+    <string name="youtube_video_id" translatable="false">24UcDIx-t4g</string>
+    <string name="home">Home</string>
+    <string name="current_language">English</string>
+    <string name="sanjay_kumar_swami" translatable="false">Sanjay Kumar Swami</string>
+    <string name="interest_counting_way">Interest Counting Way</string>
 </resources>

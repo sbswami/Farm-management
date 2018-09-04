@@ -13,7 +13,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.sanshy.farmmanagement.PayHistoryDataList;
 import com.sanshy.farmmanagement.R;
-import com.sanshy.farmmanagement.loans.PayHistory;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -44,7 +43,7 @@ public class BuyerCropsSingle extends AppCompatActivity {
     String BuyerN;
     String BuyerId;
     String BuyerRemainingAmount;
-
+    double nowRemain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +53,7 @@ public class BuyerCropsSingle extends AppCompatActivity {
         BuyerN = intent.getStringExtra(BUYER_NAME);
         BuyerId = intent.getStringExtra(BUYER_ID);
         BuyerRemainingAmount = intent.getStringExtra(BUYER_REMAIN_AMOUNT);
+        nowRemain = Double.parseDouble(BuyerRemainingAmount);
 
         BuyerName = findViewById(R.id.buyer_crop_name_single);
         RemainingAmount = findViewById(R.id.buyer_crop_remaining_amount_single);
@@ -105,7 +105,8 @@ public class BuyerCropsSingle extends AppCompatActivity {
                     removeRemainingAmountBuyer(BuyerId,Double.parseDouble(PayingAString));
                     lessAllRemainingReport(ALL,Double.parseDouble(PayingAString),BUYER);
                     PayingAmount.setText("");
-                    double nowRemain = Double.parseDouble(BuyerRemainingAmount)-Double.parseDouble(PayingAString);
+
+                    nowRemain = nowRemain-Double.parseDouble(PayingAString);
                     RemainingAmount.setText(String.valueOf(nowRemain));
                     ShowDialog(BuyerCropsSingle.this,getString(R.string.saved));
                 }

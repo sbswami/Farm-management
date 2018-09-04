@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".loans.OptionForSingleLoan">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/single_loan_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="@string/loan"
+                android:textAlignment="center"
+                android:textColor="@color/title_color"
+                android:textSize="@dimen/title_text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/detail_loan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="loanDetailBt">
+
+                    <ImageView
+                        android:id="@+id/detail_loan_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/small_report_white"
+                        android:contentDescription="@string/sowing_crop" />
+
+                    <TextView
+                        android:id="@+id/detail_loan_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/loan_detail"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/pay_loan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="payLoanBt">
+
+                    <ImageView
+                        android:id="@+id/pay_loan_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/give_loan_paid_white"
+                        android:contentDescription="@string/sowing_crop" />
+
+                    <TextView
+                        android:id="@+id/pay_loan_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/pay_loan"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/calculate_loan_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="calculateBt">
+
+                    <ImageView
+                        android:id="@+id/calculate_loan_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/get_loan_history_white"
+                        android:contentDescription="@string/on_a_standing_crop" />
+
+                    <TextView
+                        android:id="@+id/calculate_loan_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/calculate"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/pay_history_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="payHistoryBt">
+
+                    <ImageView
+                        android:id="@+id/pay_history_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/history_white"
+                        android:contentDescription="@string/on_a_standing_crop" />
+
+                    <TextView
+                        android:id="@+id/pay_history_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/pay_history"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/loan_report_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/icon_bg"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:onClick="reportBt">
+
+                    <ImageView
+                        android:id="@+id/loan_report_icon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        app:srcCompat="@drawable/big_report_white"
+                        android:contentDescription="@string/reaping_crop" />
+
+                    <TextView
+                        android:id="@+id/loan_report_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/acme"
+                        android:text="@string/loan_report"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_icon"
+                        android:textSize="@dimen/normal_text" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

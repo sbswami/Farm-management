@@ -7,14 +7,24 @@ public class LoanPayingDataList {
     String LoanId;
     Date date;
     double amount;
+    double payingInterest;
     String LoanPersonName;
 
-    public LoanPayingDataList(String payId, String loanId, Date date, double amount, String loanPersonName) {
+    public LoanPayingDataList(String payId, String loanId, Date date, double amount, double payingInterest, String loanPersonName) {
         PayId = payId;
         LoanId = loanId;
         this.date = date;
         this.amount = amount;
+        this.payingInterest = payingInterest;
         LoanPersonName = loanPersonName;
+    }
+
+    public double getPayingInterest() {
+        return payingInterest;
+    }
+
+    public void setPayingInterest(double payingInterest) {
+        this.payingInterest = payingInterest;
     }
 
     public String getLoanPersonName() {

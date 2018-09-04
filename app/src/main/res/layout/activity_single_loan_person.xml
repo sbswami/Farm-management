@@ -5,17 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".loans.PayHistory">
-
+    tools:context=".loans.SingleLoanPerson">
     <Button
-        android:id="@+id/filter_pay_history_bt"
+        android:id="@+id/filter_loan_list_bt"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="FilterPayHistory"
+        android:onClick="filterLoanList"
         android:text="@string/filter"
         android:textAllCaps="false"
         android:textSize="@dimen/normal_text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/paid_loan_check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/similar_margin"
+            android:layout_weight="1"
+            android:ems="10"
+            android:checked="true"
+            android:fontFamily="@font/acme"
+            android:text="@string/paid"
+            android:textSize="@dimen/normal_text" />
+        <CheckBox
+            android:id="@+id/unpaid_loan_check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:layout_margin="@dimen/similar_margin"
+            android:ems="10"
+            android:fontFamily="@font/acme"
+            android:text="@string/unpaid"
+            android:textSize="@dimen/normal_text" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -30,6 +58,17 @@
             android:gravity="center"
             android:fontFamily="@font/acme"
             android:text="@string/date"
+            android:textColor="@color/simple_text_view_color"
+            android:textSize="@dimen/normal_text" />
+        <TextView
+            android:id="@+id/remark_column"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:text="@string/remark"
             android:textColor="@color/simple_text_view_color"
             android:textSize="@dimen/normal_text" />
         <TextView
@@ -57,8 +96,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/pay_history_list"
+        android:id="@+id/loan_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

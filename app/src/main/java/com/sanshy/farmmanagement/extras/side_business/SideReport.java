@@ -41,6 +41,7 @@ import static com.sanshy.farmmanagement.MyStatic.dateInterval;
 import static com.sanshy.farmmanagement.MyStatic.fromDateStatic;
 import static com.sanshy.farmmanagement.MyStatic.sideReportLocation;
 import static com.sanshy.farmmanagement.MyStatic.singleDateStatic;
+import static com.sanshy.farmmanagement.MyStatic.singleDateStaticTill;
 import static com.sanshy.farmmanagement.MyStatic.toDateStatic;
 
 public class SideReport extends AppCompatActivity {
@@ -91,62 +92,21 @@ public class SideReport extends AppCompatActivity {
                     }
                 });
     }
-    public void addSideReport(final Date date){
-        IncomeValue = 0;
-        ExpenditureValue = 0;
-        ProfitValue = 0;
-        ShowProgress(this);
-        sideReportLocation.orderBy(DATE, Query.Direction.DESCENDING).get()
-                .addOnSuccessListener(this, new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        for (QueryDocumentSnapshot queryDocumentSnapshot: queryDocumentSnapshots){
-                            if (DateToString(queryDocumentSnapshot.getDate(DATE)).equals(DateToString(date))){
-                                Map<String, Object> DataMap = queryDocumentSnapshot.getData();
-
-                                ExpenditureValue += (double) DataMap.get(EXPENDITURE_FIRESTORE_FIELD_KEY);
-                                IncomeValue += (double) DataMap.get(INCOME_FIRESTORE_FIELD_KEY);
-                            }
-                        }
-
-                        ProfitValue = IncomeValue - ExpenditureValue;
-
-                        Expenditure.setText(String.valueOf(ExpenditureValue));
-                        Income.setText(String.valueOf(IncomeValue));
-                        Profit.setText(String.valueOf(ProfitValue));
-                        HideProgress();
-                    }
-                }).addOnFailureListener(this, new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                ShowDialog(SideReport.this,e.toString());
-                HideProgress();
-            }
-        });
-    }
-    ArrayList<Date> datesList = new ArrayList<>();
-    ArrayList<String> dateLis = new ArrayList<>();
     public void addSideReport(Date date1,Date date2){
         IncomeValue = 0;
         ExpenditureValue = 0;
         ProfitValue = 0;
-        datesList = dateInterval(date1,date2);
-        for (int i = 0; i < datesList.size(); i++){
-            dateLis.add(i,DateToString(datesList.get(i)));
-        }
         ShowProgress(this);
-        sideReportLocation.orderBy(DATE, Query.Direction.DESCENDING).get()
+        sideReportLocation.whereGreaterThanOrEqualTo(DATE,date1)
+                .whereLessThanOrEqualTo(DATE,date2).get()
                 .addOnSuccessListener(this, new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         for (QueryDocumentSnapshot queryDocumentSnapshot: queryDocumentSnapshots){
+                            Map<String, Object> DataMap = queryDocumentSnapshot.getData();
 
-                            if (dateLis.contains(DateToString(queryDocumentSnapshot.getDate(DATE)))){
-                                Map<String, Object> DataMap = queryDocumentSnapshot.getData();
-
-                                ExpenditureValue += (double) DataMap.get(EXPENDITURE_FIRESTORE_FIELD_KEY);
-                                IncomeValue += (double) DataMap.get(INCOME_FIRESTORE_FIELD_KEY);
-                            }
+                            ExpenditureValue += (double) DataMap.get(EXPENDITURE_FIRESTORE_FIELD_KEY);
+                            IncomeValue += (double) DataMap.get(INCOME_FIRESTORE_FIELD_KEY);
                         }
 
                         ProfitValue = IncomeValue - ExpenditureValue;
@@ -169,6 +129,14 @@ public class SideReport extends AppCompatActivity {
     boolean toChooseDate = false;
 
     public void FilterSideReportHistory(final View view){
+
+
+        singleDate = false;
+        betweenDate =false;
+        singleChooseDate = false;
+        fromChooseDate = false;
+        toChooseDate = false;
+
         final AlertDialog builder = new AlertDialog.Builder(this).create();
 
         LayoutInflater layoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -233,13 +201,13 @@ public class SideReport extends AppCompatActivity {
         FilterBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (singleDate){
-                    if (singleChooseDate&&singleDateStatic!=null){
-                        addSideReport(singleDateStatic);
+                if (singleDate&&singleChooseDate){
+                    if (singleDateStatic!=null){
+                        addSideReport(singleDateStatic,singleDateStaticTill);
                     }
                 }
-                else if(betweenDate){
-                    if (fromChooseDate&&toChooseDate&&fromDateStatic!=null&&toDateStatic!=null){
+                else if(betweenDate&&fromChooseDate&&toChooseDate){
+                    if (fromDateStatic!=null&&toDateStatic!=null){
                         addSideReport(fromDateStatic, toDateStatic);
                     }
                 }

@@ -106,6 +106,9 @@ public class BuyerCrops extends AppCompatActivity {
 
                                         buyerList.setValue(Servicer);
                                         ShowDialog(BuyerCrops.this,getString(R.string.deleted));
+
+                                        BuyerHint.remove(BuyerList.get(position).getBuyerName());
+                                        BuyerList.remove(position);
                                     }
                                     myAdapter.notifyDataSetChanged();
                                     HideProgress();

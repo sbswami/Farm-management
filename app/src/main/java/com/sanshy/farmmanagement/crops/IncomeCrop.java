@@ -427,7 +427,11 @@ public class IncomeCrop extends AppCompatActivity {
         if (AreaOfLandSt.isEmpty()){
             AreaOfLandSt="0";
         }
-        
+        if (!RemarkList.contains(RemarkSt))
+        {
+            RemarkList.add(RemarkSt);
+            incomeCropRemark.setValue(RemarkList);
+        }
         
         
         SaveIt();

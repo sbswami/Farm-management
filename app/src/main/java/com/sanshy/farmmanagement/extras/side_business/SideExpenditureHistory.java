@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,14 +40,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.sanshy.farmmanagement.MyStatic.AMOUNT_SIDE_FOR_ALL;
 import static com.sanshy.farmmanagement.MyStatic.ChooseDateDialogFrom;
 import static com.sanshy.farmmanagement.MyStatic.ChooseDateDialogSingle;
 import static com.sanshy.farmmanagement.MyStatic.ChooseDateDialogTo;
+import static com.sanshy.farmmanagement.MyStatic.DATE;
 import static com.sanshy.farmmanagement.MyStatic.DATE_SIDE_BUSINESS_KEY;
 import static com.sanshy.farmmanagement.MyStatic.DateToString;
 import static com.sanshy.farmmanagement.MyStatic.DateToString2;
 import static com.sanshy.farmmanagement.MyStatic.EXPENDITURE_FIRESTORE_FIELD_KEY;
 import static com.sanshy.farmmanagement.MyStatic.HideProgress;
+import static com.sanshy.farmmanagement.MyStatic.REMARK_SIDE_FOR_ALL;
 import static com.sanshy.farmmanagement.MyStatic.ShowDialog;
 import static com.sanshy.farmmanagement.MyStatic.ShowProgress;
 import static com.sanshy.farmmanagement.MyStatic.fromDateStatic;
@@ -55,13 +59,14 @@ import static com.sanshy.farmmanagement.MyStatic.sideExpLocation;
 import static com.sanshy.farmmanagement.MyStatic.sideExpRemark;
 import static com.sanshy.farmmanagement.MyStatic.sideReportLocation;
 import static com.sanshy.farmmanagement.MyStatic.singleDateStatic;
+import static com.sanshy.farmmanagement.MyStatic.singleDateStaticTill;
 import static com.sanshy.farmmanagement.MyStatic.toDateStatic;
 
 public class SideExpenditureHistory extends AppCompatActivity {
 
     TextView TotalAmount;
 
-    ArrayList<String> RemarkHintList = new ArrayList<>();
+    ArrayList<String> RemarkList = new ArrayList<>();
 
     ListView SideExpenditureListView;
     ArrayList<ThreeColumnsList> SEList = new ArrayList<>();
@@ -123,7 +128,7 @@ public class SideExpenditureHistory extends AppCompatActivity {
             }
         });
 
-        AddData();
+        addData();
 
     }
 
@@ -133,7 +138,7 @@ public class SideExpenditureHistory extends AppCompatActivity {
         sideExpRemark.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                RemarkHintList = (ArrayList<String>) dataSnapshot.getValue();
+                RemarkList = (ArrayList<String>) dataSnapshot.getValue();
             }
 
             @Override
@@ -143,14 +148,125 @@ public class SideExpenditureHistory extends AppCompatActivity {
         });
     }
 
-    private void AddData() {
+    private void addData(){
         ShowProgress(this);
-        sideExpLocation.orderBy(MyStatic.DATE_SIDE_BUSINESS_KEY, Query.Direction.DESCENDING).get().addOnSuccessListener(myListener);
+        sideExpLocation.orderBy(DATE_SIDE_BUSINESS_KEY, Query.Direction.DESCENDING).get().addOnSuccessListener(this, myListener).addOnFailureListener(myFailData);
     }
+    private void addData(double minAmount, double maxAmount) {
+        ShowProgress(this);
+        sideExpLocation
+                .whereGreaterThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,minAmount)
+                .whereLessThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,maxAmount)
+                .orderBy(MyStatic.AMOUNT_SIDE_FOR_ALL, Query.Direction.ASCENDING)
+                .get().addOnSuccessListener(this, myListener).addOnFailureListener(myFailData);
+    }
+    private void addData(double minAmount, double maxAmount, final Date date1, final Date date2) {
+        ShowProgress(this);
+        sideExpLocation
+                .whereGreaterThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,minAmount)
+                .whereLessThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,maxAmount)
+                .orderBy(MyStatic.AMOUNT_SIDE_FOR_ALL, Query.Direction.ASCENDING)
+                .get().addOnSuccessListener(this, new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                SEList.clear();
+                DataList.clear();
+                for (DocumentSnapshot documentSnapshot: queryDocumentSnapshots){
+
+                    if (!((documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).after(date1)
+                            ||documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).equals(date1))
+                            &&(documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).before(date2)
+                            ||documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).equals(date2)))) {
+                        continue;
+                    }
+
+                    Map<String, Object> MapObj = new HashMap<>();
+                    MapObj = documentSnapshot.getData();
+                    assert MapObj != null;
+                    SingleExpOrInc Data = new SingleExpOrInc(MapObj.get(MyStatic.ID_SIDE_FOR_ALL).toString(),MapObj.get(MyStatic.REMARK_SIDE_FOR_ALL).toString(),(Double)MapObj.get(MyStatic.AMOUNT_SIDE_FOR_ALL),(Date) MapObj.get(MyStatic.DATE_SIDE_FOR_ALL));
+                    DataList.add(Data);
+                    ThreeColumnsList item = new ThreeColumnsList(DateToString(Data.getDate()),Data.getRemark(),String.valueOf(Data.getAmount()));
+                    SEList.add(item);
+                }
+                myAdapter.notifyDataSetChanged();
+                HideProgress();
+            }
+        }).addOnFailureListener(myFailData);
+    }
+    private void addData(double minAmount, double maxAmount, final Date date1, final Date date2,String remark) {
+        ShowProgress(this);
+        sideExpLocation
+                .whereGreaterThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,minAmount)
+                .whereLessThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,maxAmount)
+                .whereEqualTo(REMARK_SIDE_FOR_ALL,remark)
+                .orderBy(MyStatic.AMOUNT_SIDE_FOR_ALL, Query.Direction.ASCENDING)
+                .get().addOnSuccessListener(this, new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                SEList.clear();
+                DataList.clear();
+                for (DocumentSnapshot documentSnapshot: queryDocumentSnapshots){
+
+                    if (!((documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).after(date1)
+                            ||documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).equals(date1))
+                            &&(documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).before(date2)
+                            ||documentSnapshot.getDate(DATE_SIDE_BUSINESS_KEY).equals(date2)))) {
+                        continue;
+                    }
+
+                    Map<String, Object> MapObj = new HashMap<>();
+                    MapObj = documentSnapshot.getData();
+                    assert MapObj != null;
+                    SingleExpOrInc Data = new SingleExpOrInc(MapObj.get(MyStatic.ID_SIDE_FOR_ALL).toString(),MapObj.get(MyStatic.REMARK_SIDE_FOR_ALL).toString(),(Double)MapObj.get(MyStatic.AMOUNT_SIDE_FOR_ALL),(Date) MapObj.get(MyStatic.DATE_SIDE_FOR_ALL));
+                    DataList.add(Data);
+                    ThreeColumnsList item = new ThreeColumnsList(DateToString(Data.getDate()),Data.getRemark(),String.valueOf(Data.getAmount()));
+                    SEList.add(item);
+                }
+                myAdapter.notifyDataSetChanged();
+                HideProgress();
+            }
+        }).addOnFailureListener(myFailData);
+
+    }
+    private void addData(double minAmount, double maxAmount,String remark) {
+        ShowProgress(this);
+        sideExpLocation
+                .whereGreaterThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,minAmount)
+                .whereLessThanOrEqualTo(AMOUNT_SIDE_FOR_ALL,maxAmount)
+                .whereEqualTo(REMARK_SIDE_FOR_ALL,remark)
+                .orderBy(MyStatic.AMOUNT_SIDE_FOR_ALL, Query.Direction.ASCENDING)
+                .get().addOnSuccessListener(this, myListener).addOnFailureListener(myFailData);
+    }
+    private void addData(Date date1, Date date2) {
+        ShowProgress(this);
+        sideExpLocation
+                .whereGreaterThanOrEqualTo(DATE_SIDE_BUSINESS_KEY,date1)
+                .whereLessThanOrEqualTo(DATE_SIDE_BUSINESS_KEY,date2)
+                .orderBy(DATE_SIDE_BUSINESS_KEY, Query.Direction.DESCENDING).get().addOnSuccessListener(this, myListener).addOnFailureListener(myFailData);
+    }
+    private void addData(Date date1, Date date2,String remark) {
+        ShowProgress(this);
+        sideExpLocation
+                .whereGreaterThanOrEqualTo(DATE_SIDE_BUSINESS_KEY,date1)
+                .whereLessThanOrEqualTo(DATE_SIDE_BUSINESS_KEY,date2)
+                .whereEqualTo(REMARK_SIDE_FOR_ALL,remark)
+                .orderBy(DATE_SIDE_BUSINESS_KEY, Query.Direction.DESCENDING).get().addOnSuccessListener(this, myListener).addOnFailureListener(myFailData);
+    }
+    private void addData(String remark) {
+        ShowProgress(this);
+        sideExpLocation
+                .whereEqualTo(REMARK_SIDE_FOR_ALL,remark)
+                .orderBy(DATE_SIDE_BUSINESS_KEY, Query.Direction.DESCENDING)
+                .get().addOnSuccessListener(this, myListener).addOnFailureListener(myFailData);
+    }
+
+
+
 
     String RemarkString;
     String MinAmountString;
     String MaxAmountString;
+
     boolean singleDate = false;
     boolean betweenDate = false;
 
@@ -159,13 +275,21 @@ public class SideExpenditureHistory extends AppCompatActivity {
     boolean toChooseDate = false;
 
     public void FilterSideExpenditureHistory(View view){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+
+        singleDate = false;
+        betweenDate =false;
+        singleChooseDate = false;
+        fromChooseDate = false;
+        toChooseDate = false;
+
+        final AlertDialog builder = new AlertDialog.Builder(this).create();
 
         LayoutInflater layoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View customFilterView = layoutInflater.inflate(R.layout.custom_filter_for_side_business,null);
 
         final AutoCompleteTextView RemarkFilter = customFilterView.findViewById(R.id.remark_filter);
-        setSnipper(this,RemarkFilter,RemarkHintList);
+        setSnipper(this,RemarkFilter, RemarkList);
 
         final EditText MinAmountFilter = customFilterView.findViewById(R.id.min_amount_filter);
         final EditText MaxAmountFilter = customFilterView.findViewById(R.id.max_amount_filter);
@@ -236,104 +360,234 @@ public class SideExpenditureHistory extends AppCompatActivity {
                 MinAmountString = MinAmountFilter.getText().toString();
                 MaxAmountString = MaxAmountFilter.getText().toString();
 
-                double minA = 0.0;
-                double maxA = 2000000000;
-
-                if (!(MinAmountString.isEmpty())){
-                    minA = Double.parseDouble(MinAmountString);
+                if (MinAmountString.isEmpty()&&!MaxAmountString.isEmpty()){
+                    MinAmountFilter.setText(R.string.default_min_amount);
+                    MinAmountString = getString(R.string.default_min_amount);
                 }
-                if (!(MaxAmountString.isEmpty())){
-                    maxA = Double.parseDouble(MaxAmountString);
-                }
-
-                if (singleDate){
-                    if (singleChooseDate&&singleDateStatic!=null){
-                        if (!(RemarkString.isEmpty()))
-                        {
-                            sideExpLocation.whereEqualTo(MyStatic.REMARK_SIDE_FOR_ALL,RemarkString)
-                                    .whereGreaterThan(MyStatic.AMOUNT_SIDE_FOR_ALL,minA)
-                                    .whereLessThan(MyStatic.AMOUNT_SIDE_FOR_ALL,maxA)
-                                    .whereEqualTo(DATE_SIDE_BUSINESS_KEY,singleDateStatic)
-                                    .get().addOnSuccessListener(myListener).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    ShowDialog(SideExpenditureHistory.this,e.toString());
-                                }
-                            });
-                        }else{
-                            sideExpLocation.whereGreaterThan(MyStatic.AMOUNT_SIDE_FOR_ALL,minA)
-                                    .whereLessThan(MyStatic.AMOUNT_SIDE_FOR_ALL,maxA)
-                                    .whereEqualTo(DATE_SIDE_BUSINESS_KEY,singleDateStatic)
-                                    .get().addOnSuccessListener(myListener).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    ShowDialog(SideExpenditureHistory.this,e.toString());
-                                }
-                            });
-                        }
-                    }
-                }
-                else if(betweenDate){
-                    if (fromChooseDate&&toChooseDate&&fromDateStatic!=null&&toDateStatic!=null){
-                        if (!(RemarkString.isEmpty()))
-                        {
-                            sideExpLocation.whereEqualTo(MyStatic.REMARK_SIDE_FOR_ALL,RemarkString)
-                                    .whereGreaterThan(MyStatic.AMOUNT_SIDE_FOR_ALL,minA)
-                                    .whereLessThan(MyStatic.AMOUNT_SIDE_FOR_ALL,maxA)
-                                    .whereGreaterThan(DATE_SIDE_BUSINESS_KEY,fromDateStatic)
-                                    .whereLessThan(DATE_SIDE_BUSINESS_KEY,toDateStatic)
-                                    .get().addOnSuccessListener(myListener).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    ShowDialog(SideExpenditureHistory.this,e.toString());
-System.out.println(e.toString());
-                                }
-                            });
-                        }else{
-                            sideExpLocation.whereGreaterThan(MyStatic.AMOUNT_SIDE_FOR_ALL,minA)
-                                    .whereLessThan(MyStatic.AMOUNT_SIDE_FOR_ALL,maxA)
-                                    .whereGreaterThan(DATE_SIDE_BUSINESS_KEY,fromDateStatic)
-                                    .whereLessThan(DATE_SIDE_BUSINESS_KEY,toDateStatic)
-                                    .get().addOnSuccessListener(myListener).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    ShowDialog(SideExpenditureHistory.this,e.toString());
-                                }
-                            });
-                        }
-                    }
+                if (MaxAmountString.isEmpty()&&!MinAmountString.isEmpty()){
+                    MaxAmountFilter.setText(R.string.default_max_amount);
+                    MaxAmountString = getString(R.string.default_max_amount);
                 }
 
-                else{
-                    if (!(RemarkString.isEmpty()))
-                    {
-                        sideExpLocation.whereEqualTo(MyStatic.REMARK_SIDE_FOR_ALL,RemarkString)
-                                .whereGreaterThan(MyStatic.AMOUNT_SIDE_FOR_ALL,minA)
-                                .whereLessThan(MyStatic.AMOUNT_SIDE_FOR_ALL,maxA)
-                                .get().addOnSuccessListener(myListener).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    ShowDialog(SideExpenditureHistory.this,e.toString());
-                                }
-                            });
+                /*
+                 * Remark Filter
+                 */
+                if ((!singleDate)&&(!betweenDate)
+                        &&(MinAmountString.isEmpty())
+                        &&(MaxAmountString.isEmpty())
+
+                        &&(!RemarkString.isEmpty())
+
+
+                        ){
+
+                    if (RemarkList.contains(RemarkString)){
+                        addData(RemarkString);
                     }else{
-                        sideExpLocation.whereGreaterThan(MyStatic.AMOUNT_SIDE_FOR_ALL,minA)
-                                .whereLessThan(MyStatic.AMOUNT_SIDE_FOR_ALL,maxA)
-                                .get().addOnSuccessListener(myListener).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    ShowDialog(SideExpenditureHistory.this,e.toString());
-                                }
-                            });
+                        onWrongValue();
                     }
+
                 }
 
+
+                /*
+                  Remark and Amount Filter
+                 */
+                if ((!singleDate)&&(!betweenDate)
+                        &&(!MinAmountString.isEmpty())
+                        &&(!MaxAmountString.isEmpty())
+
+                        &&(!RemarkString.isEmpty())
+
+
+                        ){
+
+                    if (RemarkList.contains(RemarkString)){
+                        addData(Double.parseDouble(MinAmountString),
+                                Double.parseDouble(MaxAmountString),
+                                RemarkString
+                        );
+                    }else{
+                        onWrongValue();
+                    }
+
+                }
+
+                /*
+                  Amount Filter
+                 */
+                if ((!singleDate)&&(!betweenDate)
+                        &&(!MinAmountString.isEmpty())
+                        &&(!MaxAmountString.isEmpty())
+
+                        &&(RemarkString.isEmpty())
+
+
+                        ){
+
+                    addData(Double.parseDouble(MinAmountString),Double.parseDouble(MaxAmountString));
+
+                }
+
+                /*
+                  Single Date Filter
+                 */
+
+                if (singleDate&&singleChooseDate){
+
+                    /*
+                    Single Date
+                     */
+                    if ((MinAmountString.isEmpty())
+                            &&(MaxAmountString.isEmpty())
+
+                            &&(RemarkString.isEmpty())
+
+
+                            ){
+
+                        addData(singleDateStatic,singleDateStaticTill);
+
+                    }
+
+                    /*
+                    Amount Filter With Single Date
+                     */
+                    else if ((!MinAmountString.isEmpty())
+                            &&(!MaxAmountString.isEmpty())
+
+                            &&(RemarkString.isEmpty())
+
+
+                            ){
+
+                        addData(Double.parseDouble(MinAmountString),Double.parseDouble(MaxAmountString),
+                                singleDateStatic,singleDateStaticTill);
+                    }
+
+                    /*
+                    Remark filter
+                     */
+                    else if ((MinAmountString.isEmpty())
+                            &&(MaxAmountString.isEmpty())
+
+                            &&(!RemarkString.isEmpty())
+
+
+                            ){
+                        if (RemarkList.contains(RemarkString)){
+                            addData(singleDateStatic, singleDateStaticTill,RemarkString);
+                        }else{
+                            onWrongValue();
+                        }
+                    }
+
+                    /*
+                    Amount and Remark Single Date
+                     */
+                    else if ((!MinAmountString.isEmpty())
+                            &&(!MaxAmountString.isEmpty())
+
+                            &&(!RemarkString.isEmpty())
+
+                            ){
+                        if (RemarkList.contains(RemarkString)){
+                            addData(Double.parseDouble(MinAmountString),Double.parseDouble(MaxAmountString),
+                                    singleDateStatic,singleDateStaticTill,RemarkString);
+                        }else{
+                            onWrongValue();
+                        }
+
+                    }
+
+                }
+
+
+                /*
+                  Between Date Filter
+                 */
+
+                if (betweenDate&&toChooseDate&&fromChooseDate){
+
+                    /*
+                    Between Date
+                     */
+                    if ((MinAmountString.isEmpty())
+                            &&(MaxAmountString.isEmpty())
+
+                            &&(RemarkString.isEmpty())
+
+
+                            ){
+                        addData(fromDateStatic,toDateStatic);
+                    }
+
+                    /*
+                    Amount Filter
+                     */
+                    else if ((!MinAmountString.isEmpty())
+                            &&(!MaxAmountString.isEmpty())
+
+                            &&(RemarkString.isEmpty())
+
+
+                            ){
+                        addData(Double.parseDouble(MinAmountString),Double.parseDouble(MaxAmountString),
+                                fromDateStatic,toDateStatic);
+                    }
+
+                    /*
+                    Remark filter
+                     */
+                    else if ((MinAmountString.isEmpty())
+                            &&(MaxAmountString.isEmpty())
+
+                            &&(!RemarkString.isEmpty())
+
+
+                            ){
+                        if (RemarkList.contains(RemarkString)){
+                            addData(fromDateStatic, toDateStatic,RemarkString);
+                        }else{
+                            onWrongValue();
+                        }
+                    }
+
+
+
+                    /*
+                    Amount and Remark Single Date
+                     */
+                    else if ((!MinAmountString.isEmpty())
+                            &&(!MaxAmountString.isEmpty())
+
+                            &&(!RemarkString.isEmpty())
+
+                            ){
+                        if (RemarkList.contains(RemarkString)){
+                            addData(Double.parseDouble(MinAmountString),Double.parseDouble(MaxAmountString),
+                                    fromDateStatic,toDateStatic,RemarkString);
+                        }else{
+                            onWrongValue();
+                        }
+
+                    }
+
+
+                }
+
+                builder.dismiss();
             }
         });
 
         builder.setView(customFilterView);
 
-        builder.create().show();
+        builder.show();
+    }
+
+
+    public void onWrongValue(){
+        ShowDialog(SideExpenditureHistory.this,getString(R.string.please_fill_correct_value));
     }
 
     OnSuccessListener<QuerySnapshot> myListener = new OnSuccessListener<QuerySnapshot>() {
@@ -354,4 +608,13 @@ System.out.println(e.toString());
             HideProgress();
         }
     };
+
+    OnFailureListener myFailData = new OnFailureListener() {
+        @Override
+        public void onFailure(@NonNull Exception e) {
+            Log.d("Firestore", "Index : "+e.toString());
+            System.out.println(e.toString());
+        }
+    };
+
 }

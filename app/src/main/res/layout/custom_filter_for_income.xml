@@ -90,30 +90,30 @@ android:fontFamily="@font/acme"
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
 
-                <EditText
-android:fontFamily="@font/acme"
-                    android:id="@+id/min_rate_filter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/min_rate"
-                    android:inputType="numberDecimal" />
+                <!--<EditText-->
+<!--android:fontFamily="@font/acme"-->
+                    <!--android:id="@+id/min_rate_filter"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:ems="10"-->
+                    <!--android:hint="@string/min_rate"-->
+                    <!--android:inputType="numberDecimal" />-->
 
-                <EditText
-android:fontFamily="@font/acme"
-                    android:id="@+id/max_rate_filter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/max_rate"
-                    android:inputType="numberDecimal" />
+                <!--<EditText-->
+<!--android:fontFamily="@font/acme"-->
+                    <!--android:id="@+id/max_rate_filter"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:ems="10"-->
+                    <!--android:hint="@string/max_rate"-->
+                    <!--android:inputType="numberDecimal" />-->
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
 
             <TextView
@@ -249,33 +249,33 @@ android:fontFamily="@font/acme"
                 </LinearLayout>
 
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/partner_container_filter"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                
-                <AutoCompleteTextView
+            <!--<LinearLayout-->
+                <!--android:id="@+id/partner_container_filter"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+                <!---->
+                <!--<AutoCompleteTextView-->
 
-                        android:fontFamily="@font/acme"
-                    android:id="@+id/partner_filter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/partner_name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <!--android:fontFamily="@font/acme"-->
+                    <!--android:id="@+id/partner_filter"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/partner_name"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-                <EditText
-android:fontFamily="@font/acme"
-                    android:id="@+id/sharing_percentage_filter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/sharing_percentage"
-                    android:inputType="numberDecimal" />
-                
-            </LinearLayout>
+                <!--<EditText-->
+<!--android:fontFamily="@font/acme"-->
+                    <!--android:id="@+id/sharing_percentage_filter"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:ems="10"-->
+                    <!--android:hint="@string/sharing_percentage"-->
+                    <!--android:inputType="numberDecimal" />-->
+                <!---->
+            <!--</LinearLayout>-->
             <Button
                 android:id="@+id/filter_bt"
                 style="@style/Widget.AppCompat.Button.Colored"
