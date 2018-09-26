@@ -1,0 +1,4 @@
+Advertisements
+This application get users interests of topics to show ads. the user interest information collected by google services. We are not using users information for any other reason.
+
+
