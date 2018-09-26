@@ -1,0 +1,5 @@
+Sponsored Advertisement
+This app has sponsored ads which not distrib while working. The sponsored Advertising Not using any personal information.
+Firebase Authentication
+This app only use public profile of your authentication method.
+
